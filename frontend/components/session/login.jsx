@@ -21,15 +21,12 @@ class Login extends React.Component {
     this.props.login(this.state)
   }
 
-  handleDemoSubmit(e) {
-    e.preventDefault;
-    this.props.demoLogin()
-  }
 
   render() {
     return (
-      <div className="session-form">
+      <div className="login-form">
         <h2>Login</h2>
+        <button onClick={this.props.demoLogin}>Demo Login!</button>
         <form>
           <label>Maven Email
             <input
@@ -46,7 +43,6 @@ class Login extends React.Component {
             />
           </label>
           <button onClick={this.handleSubmit}>Login!</button>
-          <button onClick={this.handleDemoSubmit}>Demo Login!</button>
         </form>
       </div>
     )
