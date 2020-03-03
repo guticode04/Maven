@@ -1,10 +1,9 @@
 import React from 'react';
 
-class Signup extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: '',
       email: '',
       password: '',
     };
@@ -19,7 +18,7 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault;
-    this.props.createNewUser(this.state)
+    this.props.login(this.state)
   }
 
   handleDemoSubmit(e) {
@@ -30,16 +29,9 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Sign Up</h2>
+        <h2>Login</h2>
         <form>
-          <label>Maven Nickname
-            <input
-              type="text"
-              value={this.state.nickname}
-              onChange={this.handleInput('nickname')}
-            />
-          </label>
-          <label>Email
+          <label>Maven Email
             <input
               type="text"
               value={this.state.email}
@@ -53,7 +45,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')}
             />
           </label>
-          <button onClick={this.handleSubmit}>Sign Up!</button>
+          <button onClick={this.handleSubmit}>Login!</button>
           <button onClick={this.handleDemoSubmit}>Demo Login!</button>
         </form>
       </div>
@@ -61,5 +53,4 @@ class Signup extends React.Component {
   }
 }
 
-
-export default Signup;
+export default Login;
