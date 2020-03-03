@@ -42,7 +42,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('email')}
             />
           </label>
-          <label>password
+          <label>Password
             <input
               type="password"
               value={this.state.password}

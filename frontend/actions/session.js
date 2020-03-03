@@ -22,5 +22,5 @@ export const createNewUser = formUser => dispatch => postUser(formUser)
 export const login = formUser => dispatchEvent => postSession(formUser)
   .then(user => dispatch(recieveCurrentUser(user)));
 
-export const logout => () => dispatch => deleteSession()
+export const logout = () => dispatch => deleteSession()
   .then(() => dispatch(logoutCurrentUser()));
