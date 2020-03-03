@@ -1,7 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/root';
+import createStore from './store/store';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Hello!</h1>, root);
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    }
+  }
+  const store = createStore(preloadedState);
+  ReactDOM.render(<Root store={store} />, root);
 })
