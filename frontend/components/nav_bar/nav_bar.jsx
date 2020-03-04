@@ -8,7 +8,7 @@ export default ({ currentUser, logout }) => {
       <button onClick={logout}>Logout</button>
     </div>
   ) : (
-    <div>
+    <div className="actions">
       <Link className="btn" to="/signup">Sign Up</Link>
       <Link className="btn" to="/login">Login</Link>
     </div>
@@ -16,6 +16,7 @@ export default ({ currentUser, logout }) => {
 
   return (
     <header className="nav-bar">
+      <div></div>
       <h1 className="logo">Maven</h1>
       <div>{display}</div>
     </header>

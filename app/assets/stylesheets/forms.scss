@@ -1,0 +1,41 @@
+
+.session-form {
+  // margin: 0 0 20px 0;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // max-width: 380px;
+  // border-top: 1px solid rgb(150,150,150);
+  // display: block;
+}
+
+.form-header {
+  margin: 0 0 0 20px;
+  padding: 20px;
+}
+
+.form-container {
+  width: 33.33%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgb(54, 53, 53);
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgb(54, 53, 53);
+}

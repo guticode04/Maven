@@ -1,0 +1,36 @@
+body {
+  display: block;
+  font-family: sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(252, 252, 84);
+}
+
+// .nav-bar div {
+//   width: 33.33%;
+// }
+
+.btn {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.btn:hover {
+  border-bottom: 3px solid red;
+  overflow: hidden;
+}
+
+.logo {
+  padding: 5px;
+  font-size: 22px;
+  color: rgb(252, 252, 84);
+  text-transform: uppercase;
+  text-shadow: -2px 2px black;
+}
