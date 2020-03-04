@@ -1,41 +1,70 @@
 
 .session-form {
-  // margin: 0 0 20px 0;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // max-width: 380px;
-  // border-top: 1px solid rgb(150,150,150);
-  // display: block;
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
 }
 
 .form-header {
-  margin: 0 0 0 20px;
-  padding: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+form {
+  padding: 10px;
 }
 
 .form-container {
-  width: 33.33%;
+  width: 370px;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.block-btn {
+  color: rgb(218, 216, 216);
+  background-color: rgb(54, 53, 53);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin-top: 5px;
+  border-radius: 2px;
 }
 
 input[type=text] {
+  font-size: 14px;
+  font-family: sans-serif;
   width: 100%;
-  padding: 12px 20px;
+  padding: 5px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   background-color: rgb(54, 53, 53);
+  color: rgb(218, 216, 216);
 }
 
 input[type=password] {
+  font-size: 14px;
+  font-family: sans-serif;
   width: 100%;
-  padding: 12px 20px;
+  padding: 5px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   background-color: rgb(54, 53, 53);
+  color: rgb(218, 216, 216);
+}
+
+label {
+  font-family: sans-serif;
+  color: rgb(218, 216, 216);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h2 {
+  color: white;
 }

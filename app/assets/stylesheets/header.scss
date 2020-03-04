@@ -11,9 +11,6 @@ body {
   background: rgb(252, 252, 84);
 }
 
-// .nav-bar div {
-//   width: 33.33%;
-// }
 
 .btn {
   padding: 5px;
@@ -34,3 +31,19 @@ body {
   text-transform: uppercase;
   text-shadow: -2px 2px black;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: rgb(218, 216, 216);
+  border-radius: 15px;
+}
+
+// .dropdown-content {
+//   display: hidden;
+//   position: absolute;
+// }
+

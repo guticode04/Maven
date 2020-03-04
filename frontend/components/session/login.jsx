@@ -25,11 +25,14 @@ class Login extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <div className="form-header">
-          <h2>Login</h2>
-          <button onClick={this.props.demoLogin}>Demo Login!</button>
-        </div>
         <div className="form-container">
+          <div className="form-header">
+            <h2>Login</h2>
+            <button 
+              className="block-btn"
+              onClick={this.props.demoLogin}
+            >Demo Login!</button>
+          </div>
           <form>
               <label>Maven Email
                 <input
@@ -45,7 +48,10 @@ class Login extends React.Component {
                   onChange={this.handleInput('password')}
                 />
               </label>
-            <button onClick={this.handleSubmit}>Login!</button>
+            <button 
+              className="block-btn"
+              onClick={this.handleSubmit}
+            >Login!</button>
           </form>
         </div>
       </div>
