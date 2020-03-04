@@ -15,7 +15,9 @@ export default ({ currentUser, logout }) => {
   return (
     <header className="nav-bar">
       <div></div>
-      <h1 className="logo">Maven</h1>
+      <h1 className="logo">
+        <Link to="/">Maven</Link>
+      </h1>
       <div>{display}</div>
     </header>
   );
