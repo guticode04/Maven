@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +30,7 @@ class Signup extends React.Component {
           <div className="form-header">
             <h2>Sign Up</h2>
             <button 
-              className="block-btn"
+              className="demo-btn"
               onClick={this.props.demoLogin}
             >Demo Login!</button>
           </div>
@@ -61,6 +61,10 @@ class Signup extends React.Component {
               onClick={this.handleSubmit}
             >Sign Up!</button>
           </form>
+          <div className="session-form-footer">
+            Already have an account? <Link className="login-link" to="/login">
+            Login</Link>
+          </div>
         </div>
       </div>
     )

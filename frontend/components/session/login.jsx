@@ -29,7 +29,7 @@ class Login extends React.Component {
           <div className="form-header">
             <h2>Login</h2>
             <button 
-              className="block-btn"
+              className="demo-btn"
               onClick={this.props.demoLogin}
             >Demo Login!</button>
           </div>

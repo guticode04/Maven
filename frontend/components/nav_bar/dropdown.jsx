@@ -34,11 +34,11 @@ class Dropdown extends React.Component {
         { this.state.show ? (
 
             <div ref={this.ref} className="dropdown-content">
-              <li>Account</li>
-              <li>Profile</li>
-              <li>
-                <button onClick={this.props.logout}>Logout</button>
-              </li>
+              <div className="dropdown-list">
+                <li onClick={this.props.logout}>
+                  Logout
+                </li>
+              </div>
             </div>
           ) : null 
         }
