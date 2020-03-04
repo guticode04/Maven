@@ -1,20 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from './dropdown';
 
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div className="dropdown">
-      <button className="dropdown-btn">
-        <i className="fas fa-user"></i>
-      </button>
-      <div className="dropdown-content">
-        <li>Account</li>
-        <li>Profile</li>
-        <li>
-          <button onClick={logout}>Logout</button>
-        </li>
-      </div>
-    </div>
+    <Dropdown logout={logout}/>
   ) : (
     <div className="actions">
       <Link className="btn" to="/signup">Sign Up</Link>
