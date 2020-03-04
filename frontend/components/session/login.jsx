@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -53,6 +53,10 @@ class Login extends React.Component {
               onClick={this.handleSubmit}
             >Login!</button>
           </form>
+          <div className="session-form-footer">
+            Already have an account? <Link className="signup-link" to="/signup">
+              Sign Up</Link>
+          </div>
         </div>
       </div>
     )
