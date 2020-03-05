@@ -8,7 +8,7 @@ export default ({ currentUser, logout }) => {
   ) : (
     <div className="actions">
       <Link className="btn" to="/signup">Sign Up</Link>
-      <Link className="btn" to="/login">Login</Link>
+      <Link className="btn" to="/login">Sign In</Link>
     </div>
   );
 
@@ -18,7 +18,7 @@ export default ({ currentUser, logout }) => {
       <h1 className="logo">
         <Link to="/">Maven</Link>
       </h1>
-      <div>{display}</div>
+      <div className="actions">{display}</div>
     </header>
   );
 };

@@ -20,7 +20,7 @@
   border: 0;
   padding: 0;
   outline: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
   font: inherit;
   text-decoration: inherit;
   text-align: inherit;
@@ -45,4 +45,8 @@ input[type="submit"] {
 
 ul {
   list-style: none;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -1,0 +1,25 @@
+.render-404 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 32px 16px;
+}
+
+.message-404 {
+  font-size: 2em; 
+  margin-top: 0.67em; 
+  margin-bottom: 0.67em; 
+  margin-left: 0; 
+  margin-right: 0; 
+  font-weight: bold;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.home-link {
+  color: rgb(20, 136, 224);
+}
+
+.home-message {
+  font-family: 'Fjalla One', sans-serif;
+}

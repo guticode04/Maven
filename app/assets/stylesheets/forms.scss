@@ -2,19 +2,22 @@
 .session-form {
   display: flex;
   justify-content: center;
-  background-color: #262626;
+  background-color: #080808;
 }
 
 .form-header {
   text-align: center;
   padding: 10px 0 10px 0;
-  margin: 0 0 8px 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 form {
+  margin-top: 20px;
   padding: 10px;
   border: 1px solid rgba(153,153,153,.07);
   border-radius: 2px;
+  background-color: #131212;
 }
 
 .form-container {
@@ -36,7 +39,7 @@ form {
 .demo-btn {
   color: white;
   width: 100%;
-  background-color: rgb(238, 40, 40);
+  background-color: rgb(238, 84, 84);
   border-radius: 2px;
   font-size: 14px;
   font-weight: bold;
@@ -78,8 +81,16 @@ label {
   font-weight: bold;
 }
 
-h2 {
+.form-type {
   color: rgb(252, 252, 84);
+  display: block; 
+  font-size: 2em; 
+  margin-top: 0.67em; 
+  margin-bottom: 0.67em; 
+  margin-left: 0; 
+  margin-right: 0; 
+  font-weight: bold;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .session-form-footer {

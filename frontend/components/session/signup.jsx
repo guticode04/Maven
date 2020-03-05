@@ -22,17 +22,33 @@ class Signup extends React.Component {
     this.props.createNewUser(this.state)
   }
 
+  renderErrors() {
+    return(
+      <div className="errors-explained">
+        <ul>
+          {
+            this.props.errors.map(error => (
+              <li>
+                {error}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    )
+  }
+
 
   render() {
     return (
       <div className="session-form">
         <div className="form-container">
           <div className="form-header">
-            <h2>Sign Up</h2>
+            <h1 className="form-type">Sign Up</h1>
             <button 
               className="demo-btn"
               onClick={this.props.demoLogin}
-            >Demo Login!</button>
+            >Demo Sign In</button>
           </div>
           <form>
             <label>Maven Nickname
@@ -59,11 +75,11 @@ class Signup extends React.Component {
             <button 
               className="block-btn"
               onClick={this.handleSubmit}
-            >Sign Up!</button>
+            >Create Account</button>
           </form>
           <div className="session-form-footer">
             Already have an account? <Link className="login-link" to="/login">
-            Login</Link>
+            Sign in here</Link>
           </div>
         </div>
       </div>

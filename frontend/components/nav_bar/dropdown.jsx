@@ -27,16 +27,16 @@ class Dropdown extends React.Component {
 
   render(){
     return(
-      <div className = "dropdown" >
-        <button onClick={this.showDropdown} className="dropdown-btn">
+      <div className="dropdown" onClick={this.showDropdown} >
+        <div className="dropdown-btn">
           <i className="fas fa-user"></i>
-        </button>
+        </div>
         { this.state.show ? (
 
             <div ref={this.ref} className="dropdown-content">
               <div className="dropdown-list">
                 <li onClick={this.props.logout}>
-                  Logout
+                  Sign out
                 </li>
               </div>
             </div>

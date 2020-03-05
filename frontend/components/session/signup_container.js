@@ -2,6 +2,10 @@ import { connect } from "react-redux";
 import { createNewUser, login } from "../../actions/session";
 import Signup from "./signup";
 
+const mapStateToProps = (state) => ({
+  errors: state.errors.session
+})
+
 const mapDispatchToProps = dispatch => ({
   createNewUser: formUser => dispatch(createNewUser(formUser)),
   demoLogin: () => dispatch(login({ 
@@ -11,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   }))
 });
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

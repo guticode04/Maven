@@ -27,11 +27,11 @@ class Login extends React.Component {
       <div className="session-form">
         <div className="form-container">
           <div className="form-header">
-            <h2>Login</h2>
+            <h1 className="form-type">Sign In</h1>
             <button 
               className="demo-btn"
               onClick={this.props.demoLogin}
-            >Demo Login!</button>
+            >Demo Sing In</button>
           </div>
           <form>
               <label>Maven Email
@@ -54,8 +54,8 @@ class Login extends React.Component {
             >Login!</button>
           </form>
           <div className="session-form-footer">
-            Already have an account? <Link className="signup-link" to="/signup">
-              Sign Up</Link>
+            Don't have an account? <Link className="signup-link" to="/signup">
+              Sign up here</Link>
           </div>
         </div>
       </div>
