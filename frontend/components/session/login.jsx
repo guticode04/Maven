@@ -10,6 +10,10 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value })
@@ -19,6 +23,22 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault;
     this.props.login(this.state)
+  }
+
+  renderErrors() {
+    return (
+      <div className="errors-explained">
+        <ul>
+          {
+            this.props.errors.map((error,i) => (
+              <li key={i}>
+                {error}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    )
   }
 
 
@@ -34,6 +54,7 @@ class Login extends React.Component {
             >Demo Sing In</button>
           </div>
           <form>
+            {this.renderErrors()}
               <label>Maven Email
                 <input
                   type="text"

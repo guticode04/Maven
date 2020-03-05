@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { login } from '../../actions/session';
+import { login, clearErrors } from '../../actions/session';
 import Login from './login';
 
 const mapStateToProps = (state) => ({
@@ -11,7 +11,8 @@ const mapDispatchToProps = dispatch => ({
   demoLogin: () => dispatch(login({ 
     email: 'destroyRick@citadel.com', 
     password: 'basicpassword'
-  }))
+  })),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

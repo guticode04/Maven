@@ -24,7 +24,7 @@ const receiveErrors = errors => ({
 })
 
 export const clearErrors = () => ({
-  type: RECEIVE_SESSION_ERRORS,
+  type: CLEAR_SESSION_ERRORS,
 })
 
 

@@ -11,6 +11,10 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value })
@@ -27,8 +31,8 @@ class Signup extends React.Component {
       <div className="errors-explained">
         <ul>
           {
-            this.props.errors.map(error => (
-              <li>
+            this.props.errors.map((error, i) => (
+              <li key={i}>
                 {error}
               </li>
             ))
@@ -51,6 +55,7 @@ class Signup extends React.Component {
             >Demo Sign In</button>
           </div>
           <form>
+            {this.renderErrors()}
             <label>Maven Nickname
               <input
                 type="text"

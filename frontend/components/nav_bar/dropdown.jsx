@@ -10,18 +10,25 @@ class Dropdown extends React.Component {
     this.ref = React.createRef();
   }
 
+  componentWillUnmount(){
+    if( this.closeDropdown ) {
+      document.removeEventListener('click', this.closeDropdown)
+    }
+  }
+
   showDropdown(e){
     if (this.state.show === false){
 
       e.preventDefault();
       this.setState({ show: true })
-      const closeDropdown = (e) => {
+      this.closeDropdown = (e) => {
         if ( !this.ref.current.contains(e.target)){
           this.setState( { show: false })
-          document.removeEventListener('click', closeDropdown)
+          document.removeEventListener('click', this.closeDropdown)
+          this.closeDropdown = null;
         }
       }
-      document.addEventListener('click', closeDropdown)
+      document.addEventListener('click', this.closeDropdown)
     }
   }
 
