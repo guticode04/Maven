@@ -51,7 +51,7 @@ class Login extends React.Component {
             <button 
               className="demo-btn"
               onClick={this.props.demoLogin}
-            >Demo Sing In</button>
+            >Demo Sign In</button>
           </div>
           <form>
             {this.renderErrors()}
