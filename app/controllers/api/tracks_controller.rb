@@ -1,4 +1,4 @@
-class Api::TracksController < ApplicationContoller
+class Api::TracksController < ApplicationController
 
   def index
     @tracks = Track.all
@@ -22,7 +22,7 @@ class Api::TracksController < ApplicationContoller
     if @track.update(track_params)
       render :show
     else
-      render :json @track.errors.full_messages, status: 422
+      render json: @track.errors.full_messages, status: 422
     end
   end
 
@@ -34,6 +34,7 @@ class Api::TracksController < ApplicationContoller
 
   private
   def track_params
-    require(:track).permit(:title,:artist_id)
+    params.require(:track).permit(:title,:artist_id)
   end
+
 end

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import createStore from './store/store';
 
+//For testing. Don't forget to remove!
+import * as trackActions from './actions/track_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -16,4 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const store = createStore(preloadedState);
   ReactDOM.render(<Root store={store} />, root);
+
+  window.store = store;
+  window.trackActions = trackActions;
 })
