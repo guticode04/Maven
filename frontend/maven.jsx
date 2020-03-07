@@ -5,6 +5,7 @@ import createStore from './store/store';
 
 //For testing. Don't forget to remove!
 import * as trackActions from './actions/track_actions';
+import { selectAllTracks }from './reducers/selectors';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,4 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = store;
   window.trackActions = trackActions;
+  window.selectAllTracks = selectAllTracks;
 })
