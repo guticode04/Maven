@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackIndexItem from './tracks_index_item'; 
 
 class TrackIndex extends React.Component {
 
@@ -7,21 +8,14 @@ class TrackIndex extends React.Component {
   }
 
   render() {
-    // // debugger
-    // const { tracks } = this.props;
-    // console.log(tracks);
-  
-     const tracks = this.props.tracks.map(track => {
-        return(
-          <li key={track.id}>
-            { track.title }
-          </li>
-        )
-      })
+    
+    const { tracks } = this.props;
+    
     return(
       <div>
         <ul>
-          { tracks }
+          {tracks.map(track => 
+          <TrackIndexItem key={track.id} track={track} />) }
         </ul>
       </div>
     );
