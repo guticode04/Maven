@@ -3,7 +3,8 @@ import React from 'react';
 class TrackForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state({
+    this.state = ({
+      name: '',
       title: '',
       lyrics: '',
     })
@@ -12,7 +13,7 @@ class TrackForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createTrack(track);
+    this.props.createTrack(this.state);
   }
 
   handleInput(field){
@@ -26,7 +27,15 @@ class TrackForm extends React.Component {
     return(
       <div className="new-track-form">
         <div className="new-track-form-container">
-        <form onSubmit={this.handleSubmit}>
+        <form>
+          <label>
+            Artist Name:
+            <input 
+              type="text"
+              value={this.state.name}
+              onChange={this.handleInput('name')}
+            />
+          </label>
           <label>
             Title:
             <input 
@@ -38,10 +47,16 @@ class TrackForm extends React.Component {
           <label>
             Lyrics:
             <textarea 
+              cols="30"
+              row="10"
               value={this.state.lyrics}
               onChange={this.handleInput('lyrics')}
             />
           </label>
+            <button
+              className="block-btn"
+              onClick={this.handleSubmit}
+            >Add Track</button>
         </form>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from "../utils/route_utils";
 import LoginContainer from './session/login_container';
 import ErrorPage from './error_page/error_page';
 import TrackIndexContainer from '../components/tracks/tracks_index_container';
+import TrackFormContainer from '../components/tracks/track_form_container';
 
 export default () => (
   <> 
@@ -14,6 +15,7 @@ export default () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
+      <Route path="/tracks/new" component={TrackFormContainer} />
       <Route path="/tracks" component={TrackIndexContainer} />
       <Route path="/" component={ErrorPage} />
     </Switch>

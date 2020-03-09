@@ -1,7 +1,8 @@
 import {
   RECEIVE_ALL_TRACKS,
   RECEIVE_TRACK,
-  REMOVE_TRACK
+  REMOVE_TRACK,
+  RECEIVE_ARTIST
 } from "../actions/track_actions";
 
 const tracksReducer = (oldState = {}, action) => {
