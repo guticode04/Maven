@@ -7,6 +7,8 @@ import LoginContainer from './session/login_container';
 import ErrorPage from './error_page/error_page';
 import TrackIndexContainer from '../components/tracks/tracks_index_container';
 import TrackFormContainer from '../components/tracks/track_form_container';
+import TrackShowContainer from '../components/tracks/track_show_container';
+
 
 export default () => (
   <> 
@@ -16,6 +18,7 @@ export default () => (
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
       <Route path="/tracks/new" component={TrackFormContainer} />
+      <Route path="/tracks/:trackId" component={TrackShowContainer} />
       <Route path="/tracks" component={TrackIndexContainer} />
       <Route path="/" component={ErrorPage} />
     </Switch>

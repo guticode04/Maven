@@ -13,7 +13,11 @@ class TrackForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createTrack(this.state);
+    const trackForm = this;
+    this.props.createTrack(this.state).then((createdTrack) => {
+      const trackId = Object.values(createdTrack)[0].id;
+      trackForm.props.history.push(`tracks/${trackId}`)
+    })
   }
 
   handleInput(field){

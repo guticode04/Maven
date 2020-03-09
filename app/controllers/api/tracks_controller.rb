@@ -40,6 +40,7 @@ class Api::TracksController < ApplicationController
   end
 
   def artist_params
-    params.require(:track).permit(:artist_name)
+    params.require(:track).permit(:name)
   end
+
 end
