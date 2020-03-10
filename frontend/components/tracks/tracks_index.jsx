@@ -12,11 +12,14 @@ class TrackIndex extends React.Component {
     const { tracks } = this.props;
     
     return(
-      <div>
-        <ul>
-          {tracks.map(track => 
-          <TrackIndexItem key={track.id} track={track} />) }
-        </ul>
+      <div className="top-tracks-container">
+        <h3 className="top-tracks-header">Top Tracks</h3>
+        <div className="top-tracks-chart">
+          <ol className="top-track-list">
+            {tracks.map(track => 
+            <TrackIndexItem key={track.id} track={track} />) }
+          </ol>
+        </div>
       </div>
     );
   }

@@ -9,6 +9,7 @@ class TrackIndexItem extends React.Component {
     const { track } = this.props;
     return(
       <li>
+        <div></div>
         <span>{ track.title }</span>
       </li>
     )

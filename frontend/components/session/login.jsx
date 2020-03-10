@@ -44,7 +44,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
+      <div className="whole-session-form">
         <div className="form-container">
           <div className="form-header">
             <h1 className="form-type">Sign In</h1>
@@ -53,10 +53,11 @@ class Login extends React.Component {
               onClick={this.props.demoLogin}
             >Demo Sign In</button>
           </div>
-          <form>
+          <form className="session-form">
             {this.renderErrors()}
               <label>Maven Email
                 <input
+                  className="session-form-input"
                   type="text"
                   value={this.state.email}
                   onChange={this.handleInput('email')}
@@ -64,6 +65,7 @@ class Login extends React.Component {
               </label>
               <label>Password
                 <input
+                  className="session-form-input"
                   type="password"
                   value={this.state.password}
                   onChange={this.handleInput('password')}

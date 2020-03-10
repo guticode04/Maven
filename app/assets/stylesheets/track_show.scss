@@ -1,0 +1,17 @@
+.track-header {
+  width: 100%;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-body {
+  margin-top: 1.5rem;
+  font-size: 1.125em;
+  line-height: 1.7em;
+}

@@ -8,12 +8,21 @@ class TrackShow extends React.Component {
   }
   render(){
     const { track } = this.props;
+    // debugger
     if ( !track ) {
       return null;
     }
     return(
       <div>
-        <p>{track.title}</p>
+        <div className="track-header">
+          <div className="track-info">
+            <p>{track.artist_name}</p>
+            <p>{track.title}</p>
+          </div>
+        </div>
+        <div className="track-body">
+          <p>{track.lyrics}</p>
+        </div>
       </div>
     )
   }

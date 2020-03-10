@@ -32,10 +32,11 @@ class TrackForm extends React.Component {
     return(
       <div className="new-track-form">
         <div className="new-track-form-container">
-        <form>
+          <h2 className="new-track-header">Add Track</h2>
+        <form className="track-form-details">
           <label>
             Artist Name:
-            <input 
+            <input className="new-track-input"
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
@@ -43,7 +44,7 @@ class TrackForm extends React.Component {
           </label>
           <label>
             Title:
-            <input 
+            <input className="new-track-input"
               type="text"
               value={this.state.title}
               onChange={this.handleInput('title')}
@@ -52,14 +53,13 @@ class TrackForm extends React.Component {
           <label>
             Lyrics:
             <textarea 
-              cols="30"
-              row="10"
+              className="add-lyrics"
               value={this.state.lyrics}
               onChange={this.handleInput('lyrics')}
-            />
+              />
           </label>
             <button
-              className="block-btn"
+              className="add-track-btn"
               onClick={this.handleSubmit}
             >Add Track</button>
         </form>

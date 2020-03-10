@@ -1,5 +1,5 @@
 
-.session-form {
+.whole-session-form {
   display: flex;
   justify-content: center;
   background-color: #080808;
@@ -12,7 +12,7 @@
   text-transform: uppercase;
 }
 
-form {
+.session-form {
   margin-top: 20px;
   padding: 10px;
   border: 1px solid rgba(153,153,153,.07);
@@ -46,7 +46,7 @@ form {
   padding: 7px;
 }
 
-input[type=text] {
+.session-form-input {
   font-size: 14px;
   font-family: sans-serif;
   width: 100%;
@@ -60,19 +60,6 @@ input[type=text] {
   color: rgb(218, 216, 216);
 }
 
-input[type=password] {
-  font-size: 14px;
-  font-family: sans-serif;
-  width: 100%;
-  padding: 5px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: rgb(54, 53, 53);
-  color: rgb(218, 216, 216);
-}
 
 label {
   font-family: sans-serif;
@@ -112,4 +99,57 @@ label {
 
 .errors-explained {
   color: rgb(218, 216, 216);
+}
+
+.new-track-form {
+  width: 100%;
+  height: 100%;
+  background-color: #131212;
+}
+
+.new-track-header {
+  padding: 16px;
+  color: white;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.track-form-details{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 65%;
+    padding: 16px;
+}
+
+.add-lyrics {
+  width: 100%;
+  min-height: 500px;
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.new-track-input {
+  font-size: 14px;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.add-track-btn {
+  width: 20%;
+  color: rgb(218, 216, 216);
+  background-color: rgb(54, 53, 53);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin-top: 5px;
+  border-radius: 2px;
 }

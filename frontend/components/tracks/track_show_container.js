@@ -4,7 +4,7 @@ import TrackShow from './track_show';
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
-  return ({track: state.entities[ownProps.match.params.trackId]})
+  return ({track: state.entities.tracks[ownProps.match.params.trackId]})
 }
 
 const mapDispatchToProps = dispatch => ({
