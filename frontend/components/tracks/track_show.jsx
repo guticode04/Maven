@@ -8,6 +8,9 @@ class TrackShow extends React.Component {
   }
   render(){
     const { track } = this.props;
+    if ( !track ) {
+      return null;
+    }
     return(
       <div>
         <p>{track.title}</p>

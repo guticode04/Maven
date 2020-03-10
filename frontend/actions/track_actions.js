@@ -20,11 +20,6 @@ const removeTrack = trackId => ({
   trackId
 })
 
-const receiveArtist = artist => ({
-  type: RECEIVE_ARTIST,
-  artist
-})
-
 export const fetchTracks = () => dispatch => {
   return TrackApiUtil.fetchTracks()
     .then(tracks => dispatch(receiveTracks(tracks)))
@@ -38,8 +33,8 @@ export const fetchTrack = trackId => dispatch => {
 export const createTrack = track => dispatch => {
   return TrackApiUtil.createTrack(track)
     .then(createdTrack => { 
-      dispatch(receiveTrack(createdTrack))
-      return createdTrack
+     return dispatch(receiveTrack(createdTrack))
+      // return createdTrack
     })
 }
 
