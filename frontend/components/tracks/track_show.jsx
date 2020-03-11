@@ -15,13 +15,19 @@ class TrackShow extends React.Component {
     return(
       <div>
         <div className="track-header">
+          <i className="fas fa-music"></i>
           <div className="track-info">
-            <p>{track.artist_name}</p>
-            <p>{track.title}</p>
+            <h2 className="artist-name">{track.artist_name}</h2>
+            <h3 className="track-title">{track.title}</h3>
           </div>
         </div>
         <div className="track-body">
-          <p>{track.lyrics}</p>
+          <div className="lyrics-column">
+            <p>{track.lyrics}</p>
+          </div>
+          <div className="about-track">
+            <span>About {track.title}</span>
+          </div>
         </div>
       </div>
     )

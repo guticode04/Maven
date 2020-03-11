@@ -1,17 +1,44 @@
 .track-header {
   width: 100%;
+  height: 240px;
   display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 24px;
+  background-color: black;
 }
 
+.fa-music {
+  margin: 0 15px;
+  font-size: 60px;
+  color: white;
+}
 .track-info {
   display: flex;
   flex-direction: column;
+  color: white;
+}
+
+.artist-name {
+  margin: 0;
+}
+
+.artist-title {
+  margin: 0;
 }
 
 .track-body {
+  display: flex;
+  align-items: center;
   margin-top: 1.5rem;
   font-size: 1.125em;
   line-height: 1.7em;
+}
+
+.lyrics-column {
+  flex: 50%;
+}
+.about-track {
+  flex: 50%;
+  text-align: center;
 }

@@ -15,11 +15,11 @@ export default () => (
     <NavBarContainer />
     {/* <TrackIndexContainer /> */}
     <Switch>
+      <Route exact path="/" component={TrackIndexContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      <Route path="/tracks/new" component={TrackFormContainer} />
+      <ProtectedRoute path="/tracks/new" component={TrackFormContainer} />
       <Route path="/tracks/:trackId" component={TrackShowContainer} />
-      <Route path="/tracks" component={TrackIndexContainer} />
       <Route path="/" component={ErrorPage} />
     </Switch>
   </>
