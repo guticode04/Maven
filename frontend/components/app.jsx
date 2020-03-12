@@ -20,7 +20,7 @@ export default () => (
       <AuthRoute path="/login" component={LoginContainer} />
       <ProtectedRoute path="/tracks/new" component={TrackFormContainer} />
       <Route path="/tracks/:trackId" component={TrackShowContainer} />
-      <Route path="/" component={ErrorPage} />
+      <Route component={ErrorPage} />
     </Switch>
   </>
 );
