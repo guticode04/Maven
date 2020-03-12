@@ -13,7 +13,7 @@ class TrackIndex extends React.Component {
     
     return(
       <div className="top-tracks-container">
-        <h3 className="top-tracks-header">Top Tracks</h3>
+        <h1 className="top-tracks-header">Tracks</h1>
         <div className="top-tracks-chart">
           <ol className="top-track-list">
             {tracks.map(track => 

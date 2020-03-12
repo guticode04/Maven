@@ -1,3 +1,10 @@
+.top-tracks-header {
+    display: block; 
+    font-size: 4em; 
+    padding: 10px;
+    font-family: 'Kanit', sans-serif;
+}
+
 .top-tracks-container {
     background: rgb(255,255,255);
     display: flex;
@@ -7,22 +14,69 @@
 
 .top-tracks-chart {
     border-top: 3px solid black;
-    width: 56%;
-    display: flex;
+    width: 80%;
 }
 
 .top-track-list {
   width: 100%;
   padding: 0;
   margin: 0;
-  // list-style-type: index($list: , $value: );
+  list-style: none;
+  counter-reset: my-counter;
 }
 
 .top-track-list li {
     padding: 0 15px;
-    display: flex;
     border-bottom: 1px solid #ccc;
-    line-height: 1.125;
+    counter-increment: my-counter;
+    display: flex;
     align-items: center;
-    counter-reset: initial;
+    justify-content: space-between;
+}
+
+.top-track-list li > * {
+    flex-grow: 1;
+    flex-basis: 0px;
+    flex-shrink: 1;
+}
+
+.top-track-list li::before {
+    content: counter(my-counter);
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 24px;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.albumart-title {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#icon {
+    color: black;
+    font-size: 40px;
+}
+
+.artist {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+}
+
+.title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.track-list-item {
+    cursor: pointer;
+}
+
+.track-list-item:hover {
+    background-color: rgb(224, 222, 222);
 }

@@ -34,7 +34,6 @@ export const createTrack = track => dispatch => {
   return TrackApiUtil.createTrack(track)
     .then(createdTrack => { 
      return dispatch(receiveTrack(createdTrack))
-      // return createdTrack
     })
 }
 

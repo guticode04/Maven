@@ -15,8 +15,6 @@ class TrackForm extends React.Component {
     e.preventDefault();
     const trackForm = this;
     this.props.createTrack(this.state).then((createdTrack) => {
-      // console.log(createdTrack)
-      // const trackId = Object.values(createdTrack)[0].id;
       trackForm.props.history.push(`/tracks/${createdTrack.track.id}`)
     })
   }
