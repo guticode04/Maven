@@ -3,12 +3,51 @@ import React from 'react';
 
 class TrackShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+      lyrics: this.props.track ? this.props.track.lyrics : ''
+    }
+    this.showForm = this.showForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentDidMount(){
     this.props.fetchTrack(this.props.match.params.trackId)
   }
+
+  componentDidUpdate(oldProps){
+    if ( this.props.track !== oldProps.track ) {
+      this.setState({ lyrics: this.props.track.lyrics })
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateTrack({ lyrics: this.state.lyrics, id: this.props.track.id })
+    .then(() => this.setState({show: false}))
+  }
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({ [field]: e.currentTarget.value })
+    }
+  }
+
+  showForm(e){
+      e.preventDefault();
+      this.setState({ show: true });
+  }
+
+  hideForm(e){
+    e.preventDefault();
+    this.setState({ show: false })
+  }
+
   render(){
     const { track } = this.props;
-    // debugger
     if ( !track ) {
       return null;
     }
@@ -21,12 +60,40 @@ class TrackShow extends React.Component {
             <h3 className="track-title">{track.title}</h3>
           </div>
         </div>
-        <div className="track-body">
-          <div className="lyrics-column">
-            <p>{track.lyrics}</p>
-          </div>
-          <div className="about-track">
-            <span>About {track.title}</span>
+        <div className="track-body-container">
+          <div className="track-body">
+            <div className="lyrics-column">
+              <div className="lyrics-btns">
+                {
+                  this.state.show ? (
+                    <>
+                      <button onClick={this.handleSubmit}>Submit Changes</button>
+                      <button onClick={this.hideForm}>Cancel</button>
+                    </>
+                  ) : (
+                    <button className="edit-btn" onClick={this.showForm}>
+                    Edit Lyrics
+                    </button>
+                  )
+                }
+              </div>
+              { 
+                this.state.show ? (
+
+                  <div className="edit-form">
+                    <form>
+                      <textarea
+                        value={this.state.lyrics}
+                        onChange={this.handleInput('lyrics')} 
+                      />
+                    </form>
+                  </div>
+                ) : <p>{track.lyrics}</p>
+              }
+            </div>
+            <div className="about-track">
+              <span>About {track.title}</span>
+            </div>
           </div>
         </div>
       </div>

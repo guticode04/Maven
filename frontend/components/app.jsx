@@ -8,12 +8,12 @@ import ErrorPage from './error_page/error_page';
 import TrackIndexContainer from '../components/tracks/tracks_index_container';
 import TrackFormContainer from '../components/tracks/track_form_container';
 import TrackShowContainer from '../components/tracks/track_show_container';
-
+import LowerNavBar from '../components/nav_bar/lower_nav_bar';
 
 export default () => (
   <> 
     <NavBarContainer />
-    {/* <TrackIndexContainer /> */}
+    <LowerNavBar />
     <Switch>
       <Route exact path="/" component={TrackIndexContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />

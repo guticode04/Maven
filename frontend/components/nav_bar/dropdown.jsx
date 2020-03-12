@@ -49,7 +49,7 @@ class Dropdown extends React.Component {
             </div>
           ) : null 
         }
-    </div >
+    </div>
     )
   }
 }

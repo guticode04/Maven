@@ -27,18 +27,34 @@
   margin: 0;
 }
 
-.track-body {
+.track-body-container {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.track-body {
+  width: 80%;
+  display: flex;
   margin-top: 1.5rem;
   font-size: 1.125em;
   line-height: 1.7em;
+  background-color: white;
 }
 
 .lyrics-column {
-  flex: 50%;
+  flex: 68%;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 .about-track {
-  flex: 50%;
-  text-align: center;
+  flex: 32%;
+}
+
+.edit-btn {
+  border-color: black;
+  
 }

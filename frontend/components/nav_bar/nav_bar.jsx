@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
+import LowerNavBar from './lower_nav_bar';
 
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
