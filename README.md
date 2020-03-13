@@ -3,7 +3,7 @@ Maven, a Genius clone, is a music application that allows users to share their m
 
 [Live Demo](https://clone-genius.herokuapp.com/?#/)
 
-## Technoligies
+## Technologies
 * Backend:
     * Rails
     * ActiveRecord
@@ -38,7 +38,7 @@ Logged in users have the ability to edit track lyrics. Editing the lyrics does n
  }
 ```
 
-Logged in users also have the option of deleting a track entirely. Once it is verified that a user exists then the user has access to buttons to handle either edit track lyrics or deleting the track. 
+Logged in users also have the option of deleting a track entirely. Once it is verified that a user exists then the user has access to buttons to handle either editing track lyrics or deleting the track. 
 
 ```javascript
   {this.props.currentUser && (
