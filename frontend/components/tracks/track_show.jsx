@@ -85,15 +85,16 @@ class TrackShow extends React.Component {
                       </button>
                     </>
                   ) : ( 
-                    
                       <>
-                        <button className="edit-btn" onClick={this.showForm}>
-                        Edit Lyrics
-                        </button>
                         {this.props.currentUser && (
-                          <button className="delete-btn" onClick={this.deleteTrack}>
-                            Delete Track
-                          </button>
+                          <>
+                            <button className="edit-btn" onClick={this.showForm}>
+                              Edit Lyrics
+                            </button>
+                            <button className="delete-btn" onClick={this.deleteTrack}>
+                              Delete Track
+                            </button>
+                          </>
                         )}
                       </>
                       
