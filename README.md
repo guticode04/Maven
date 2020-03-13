@@ -1,24 +1,54 @@
-# README
+# Maven
+Maven, a Genius clone, is a music application that allows users to share their music knowledge.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://clone-genius.herokuapp.com/?#/)
 
-Things you may want to cover:
+## Technoligies
+* Backend:
+    * Rails
+    * ActiveRecord
+    * PostgreSQL
+* Frontend:
+    * React
+    * Redux
 
-* Ruby version
+## Features
 
-* System dependencies
+### User Auth
 
-* Configuration
+Secure backend to frontend authentication using BCrypt. Users can create an account and confidently know that their information is secure.
 
-* Database creation
+### Editing a Track
 
-* Database initialization
+Logged in users have the ability to edit track lyrics. Editing the lyrics does not redirect from the tracks show page instead the form shows up on the track show page with the lyrics prefilled in the textarea.
 
-* How to run the test suite
+```javascript
+{ 
+   this.state.show ? (
+    <div className="edit-form">
+      <form>
+       <textarea
+         className="lyrics-text"
+         value={this.state.lyrics}
+         onChange={this.handleInput('lyrics')} 
+        />
+      </form>
+    </div>
+    ) : <p>{track.lyrics}</p>
+ }
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Logged in users also have the option of deleting a track entirely. Once it is verified that a user exists then the user has access to buttons to handle either edit track lyrics or deleting the track. 
 
-* Deployment instructions
-
-* ...
+```javascript
+  {this.props.currentUser && (
+     <>
+     <button className="edit-btn" onClick={this.showForm}>
+      Edit Lyrics
+     </button>
+     <button className="delete-btn" onClick={this.deleteTrack}>
+      Delete Track
+     </button>
+    </>
+   )}
+```
