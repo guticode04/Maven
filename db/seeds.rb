@@ -12,6 +12,12 @@ demoUser = User.create!(
   password: 'basicpassword'
   )
 
+
+user1 = User.create!({nickname: "Neo", email: "neo@matrix.ai"})
+user2 = User.create!({nickname: "Morty", email: "cowboymorty@citadel.com"})
+user3 = User.create!({nickname: "Rick", email: "ricksanchez@tiny.com"})
+user4 = User.create!({nickname: "Morpheus", email: "morpheus@matrix.ai"})
+
 artist1 = Artist.create!({name: "J. Cole"})
 artist2 = Artist.create!({name: "Queen"})
 artist3 = Artist.create!({name: "Zedd"})

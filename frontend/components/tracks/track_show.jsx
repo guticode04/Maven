@@ -12,6 +12,7 @@ class TrackShow extends React.Component {
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteTrack = this.deleteTrack.bind(this);
   }
 
   componentDidMount(){
@@ -19,7 +20,7 @@ class TrackShow extends React.Component {
   }
 
   componentDidUpdate(oldProps){
-    if ( this.props.track !== oldProps.track ) {
+    if ( this.props.track !== oldProps.track && this.props.track ) {
       this.setState({ lyrics: this.props.track.lyrics })
     }
   }
@@ -44,6 +45,13 @@ class TrackShow extends React.Component {
   hideForm(e){
     e.preventDefault();
     this.setState({ show: false })
+  }
+
+  deleteTrack(e) {
+    e.preventDefault();
+    
+    this.props.deleteTrack(this.props.track.id)
+    .then(() => this.props.history.push(`/`))
   }
 
   render(){
@@ -76,10 +84,19 @@ class TrackShow extends React.Component {
                         Cancel
                       </button>
                     </>
-                  ) : (
-                    <button className="edit-btn" onClick={this.showForm}>
-                    Edit Lyrics
-                    </button>
+                  ) : ( 
+                    
+                      <>
+                        <button className="edit-btn" onClick={this.showForm}>
+                        Edit Lyrics
+                        </button>
+                        {this.props.currentUser && (
+                          <button className="delete-btn" onClick={this.deleteTrack}>
+                            Delete Track
+                          </button>
+                        )}
+                      </>
+                      
                   )
                 }
               </div>
