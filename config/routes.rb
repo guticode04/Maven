@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :create, :show]
     resource :session, only: [:create, :destroy]
-    resources :tracks, except: [:new, :edit]
+    resources :tracks, except: [:new, :edit] do
+      resources :annotations, only: [:index]
+    end
+    resources :annotations, except: [:index]
   end
 end
