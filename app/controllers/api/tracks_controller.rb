@@ -29,7 +29,6 @@ class Api::TracksController < ApplicationController
   
   def destroy
     @track = Track.includes(:artist).find(params[:id])
-    # @track = Track.find(params[:id])
     @track.destroy
     render :show
   end
