@@ -1,0 +1,1 @@
+export const selectAllTracks = state => Object.values(state.entities.tracks);

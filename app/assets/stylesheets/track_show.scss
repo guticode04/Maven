@@ -1,0 +1,134 @@
+.track-header {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  background-color: black;
+}
+
+.track-header-info {
+  display: flex;
+  margin-left: 70px;
+  padding-left: 20px;
+}
+
+.fa-music {
+  margin: 0 15px;
+  font-size: 60px;
+  color: white;
+  padding: 10px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 10px;
+}
+
+.artist-name {
+  margin: 0;
+}
+
+.track-title {
+  margin: 0;
+}
+
+.track-body-container {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+.track-body {
+  width: 80%;
+  display: flex;
+  font-size: 1.125em;
+  line-height: 1.7em;
+  background-color: white;
+}
+
+.lyrics-column {
+  flex: 68%;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  padding: 10px;
+}
+
+.lyrics-btns {
+  padding: 10px 10px 10px 0;
+}
+
+.about-track-header {
+  flex: 32%;
+  padding: 10px;
+}
+
+.about-track {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  border: 2px solid black;
+  font-size: 15px;
+  padding: .5em .5em;
+  font-weight: 600;
+  background: transparent;
+}
+
+.edit-btn:hover {
+  background-color: rgb(245, 243, 243);
+}
+
+.submit-edit-btn {
+  border: 2px solid black;
+  font-size: 15px;
+  padding: .5em .5em;
+  font-weight: 600;
+  background: transparent;
+}
+
+.submit-edit-btn:hover {
+  background-color: rgb(245, 243, 243);
+}
+
+.cancel-edit-btn {
+  border: 2px solid black;
+  font-size: 15px;
+  padding: .5em .5em;
+  font-weight: 600;
+  background: transparent;
+  margin-left: 5px;
+}
+
+.cancel-edit-btn:hover {
+  background-color: rgb(245, 243, 243);
+}
+
+.lyrics-text {
+  width: 80%;
+  height: 1000px;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: #ccc;
+  box-shadow: 0 0 0 1px #ec3333;
+  color: #7b7a7a;
+  box-sizing: content-box;
+  resize: none;
+}
+
+.delete-btn {
+  border: 2px solid black;
+  font-size: 15px;
+  padding: .5em .5em;
+  margin-left: 5px;
+  font-weight: 600;
+  background: transparent;
+}
