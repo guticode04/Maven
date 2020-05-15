@@ -4,7 +4,7 @@ body {
 }
 
 .nav-bar {
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,10 +32,11 @@ body {
 
 .logo {
   text-align: center;
-  font-size: 22px;
+  font-size: 26px;
   color: rgb(252, 252, 84);
   text-transform: uppercase;
-  text-shadow: -2px 2px black;
+  text-shadow: -2px 3px black;
+  letter-spacing: 0.3em;
 }
 
 .actions {
@@ -104,7 +105,7 @@ body {
   display: flex;
   background-color: black;
   justify-content: center;
-  height: 38px;
+  height: 40px;
 }
 
 .lower-nav-btns {

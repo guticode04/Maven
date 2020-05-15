@@ -8,6 +8,26 @@ const LowerNavBar = ({ loggedIn }) => {
     <div className="lower-nav">
       <ul className="lower-nav-btns">
         <li><Link to="/">Top Tracks</Link></li>
+        <li>
+          <a href="https://www.linkedin.com/in/gustavo-gutierrez-7379141a8/">
+            <i className="fab fa-linkedin" />
+          </a>
+        </li>
+        <li>
+          <a href="https://angel.co/u/gustavo-gutierrez-9">
+            <i className="fab fa-angellist"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/guticode04">
+            <i className="fab fa-github" />
+          </a>
+        </li>
+        <li>
+          <a href="https://gusgutierrez.com">
+            <i className="fas fa-user-tie"></i>
+          </a>
+        </li>
         {
           loggedIn ? (
             <>
