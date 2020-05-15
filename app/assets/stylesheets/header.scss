@@ -101,17 +101,23 @@ body {
   color: white;
 }
 
+
+.icon-links {
+  padding: 0 5px;
+}
+
+
 .lower-nav {
   display: flex;
   background-color: black;
   justify-content: center;
-  height: 40px;
+  height: 50px;
 }
 
 .lower-nav-btns {
   color: white;
-  font-size: 14px;
-  font-family: sans-serif;
+  font-size: 1.25em;
+  font-family: 'Baloo 2', sans-serif;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -121,8 +127,7 @@ body {
 
 .btn-separator {
   color: white;
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 1.25em;
+  font-family: 'Baloo 2', sans-serif;
   padding: 10px;
 }
