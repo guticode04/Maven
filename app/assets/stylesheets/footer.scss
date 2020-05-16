@@ -1,0 +1,15 @@
+footer{
+  background-color: black;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  padding: 0.25em;
+}
+
+.footer-links > i {
+  padding: 0.25em;
+}
