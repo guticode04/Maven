@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+
     <% if current_user %>
       <script>
         window.currentUser = {
@@ -19,6 +21,7 @@
     <script src="https://kit.fontawesome.com/c661c20165.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Kanit:wght@500&display=swap" rel="stylesheet">
+    
   </head>
 
   <body>

@@ -1,0 +1,48 @@
+.creator-name{
+  display: flex;
+  justify-content: center;
+  padding: 1em 1em 2em 1em;
+}
+
+.creator-name > p{
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  font-size: small;
+}
+
+footer{
+  background-color: black;
+  padding: 1em;
+}
+
+
+.footer-links{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  padding: 0.25em;
+}
+
+.footer-links > i {
+  padding: 0.25em;
+}
+
+.lower-footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 2em;
+  border-top: 2px solid rgba(82, 82, 82, 0.363);
+}
+
+.lower-footer > p{
+  color: white;
+  font-family: 'Kanit', sans-serif;
+}
+
+ul > li{
+  color: white;
+  list-style: none;
+  font-family: 'Kanit', sans-serif;
+}
