@@ -14,7 +14,7 @@ const Footer = () => {
         <p>Created By Gustavo Gutierrez</p>
       </div>
       <div className="lower-footer">
-        <p>All Artists</p>
+        <p>All Artists:</p>
         <ul>
           <li>links for alphabet of artist</li>
         </ul>
