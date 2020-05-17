@@ -5,10 +5,30 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-links">
-        <i className="fab fa-linkedin" />
-        <i className="fab fa-angellist" />
-        <i className="fab fa-github" />
-        <i className="fas fa-user-tie" />
+        <a
+          href="https://www.linkedin.com/in/gustavo-gutierrez-7379141a8/"
+          className="icon-links"
+        >
+          <i className="fab fa-linkedin" />
+        </a>
+        <a
+          href="https://angel.co/u/gustavo-gutierrez-9"
+          className="icon-links"
+        >
+          <i className="fab fa-angellist" />
+        </a>
+        <a
+          href="https://github.com/guticode04"
+          className="icon-links"
+        >
+          <i className="fab fa-github" />
+        </a>
+        <a
+          href="https://gusgutierrez.com"
+          className="icon-links"
+        >
+          <i className="fas fa-user-tie" />
+        </a>
       </div>
       <div className="creator-name"> 
         <p>Created By Gustavo Gutierrez</p>
