@@ -13,4 +13,11 @@ export const createAnnotation = annotation => (
   })
 );
 
-// export const updateAnnotation = annotation => ()s
+export const updateAnnotation = annotation => (
+  $.ajax ({
+    url: `/api/annotations/${annotation.id}`,
+    method: 'PATCH',
+    data: { annotation }
+  })
+);
+
