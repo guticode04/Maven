@@ -21,3 +21,9 @@ export const updateAnnotation = annotation => (
   })
 );
 
+export const deleteAnnotation = annotationId => (
+  $.ajax ({
+    url: `/api/annotations/${annotationId}`,
+    method: 'DELETE'
+  })
+);
