@@ -5,3 +5,12 @@ export const fetchAnnotation = annotationId => (
   })
 );
 
+export const createAnnotation = annotation => (
+  $.ajax ({
+    url: `/api/annotations`,
+    method: 'POST',
+    data: { annotation }
+  })
+);
+
+// export const updateAnnotation = annotation => ()s
