@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchAnnotation, updateAnnotation, deleteAnnotation } from '../../actions/annotation_actions';
+import AnnotationShow from './annotation_show';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -13,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   deleteAnnotation: () => dispatch(deleteAnnotation()),
 })
 
-export default connect(mapStateToProps,mapStateToProps)
+export default connect(mapStateToProps,mapStateToProps)(AnnotationShow);
