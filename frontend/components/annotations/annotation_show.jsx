@@ -9,8 +9,13 @@ class AnnotationShow extends React.Component {
   render(){
     return(
       <>
-      <div className="annotation-header">
-
+      <div className="annotation-container">
+        <div className="annotation-divider"></div>
+        <div className="annotation-triangle-container">
+          <div className="triangle-top"></div>
+          <div className="triangle-tip"></div>
+          <div className="triangle-bottom"></div>
+        </div>
       </div>
       </>
     )
