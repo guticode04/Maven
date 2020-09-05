@@ -3,6 +3,25 @@ import TrackIndexItem from './tracks_index_item';
 
 class TrackIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShowing: false,
+    }
+  }
+
+  closeModal() {
+    this.setState({
+      isShowing: false,
+    });
+  }
+
+  openModal() {
+    this.setState({
+      isShowing: true,
+    });
+  }
+
   componentDidMount() {
     this.props.fetchTracks();
   }
