@@ -7,7 +7,7 @@ class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShowing: false,
+      isShowing: true,
     }
   }
 
@@ -34,15 +34,11 @@ class TrackIndex extends React.Component {
     return(
       <>
         { 
-            this.state.isShowing ? 
+          this.state.isShowing ? (
           <div>
-              this.openModal()
+              <Modal open={this.openModal} close={this.closeModal} />
           </div> 
-          : 
-          <div>
-              this.closeModal()
-          </div> 
-        }
+          ) : null }
 
         <div className="top-tracks-container">
           <h1 className="top-tracks-header">Tracks</h1>
