@@ -12,7 +12,7 @@ const Modal = (props) => {
                and annotation for those tracks. In order to be able to add tracks
                comments and annotations users must create an account. 
             </p>
-            <button onClick={close}>Close</button>
+            <button className="close-modal-btn" onClick={close}>Close</button>
          </div>
       </>
    )
