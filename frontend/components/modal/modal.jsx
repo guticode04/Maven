@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Modal = () => {
-
+const Modal = (props) => {
+   const { open, close } = props;
    return(
       <>
          <div className="modal-window">
@@ -12,6 +12,7 @@ const Modal = () => {
                and annotation for those tracks. In order to be able to add tracks
                comments and annotations users must create an account. 
             </p>
+            <button onClick={close}>Close</button>
          </div>
       </>
    )

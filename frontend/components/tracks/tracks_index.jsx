@@ -9,15 +9,19 @@ class TrackIndex extends React.Component {
     this.state = {
       isShowing: true,
     }
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
-  closeModal() {
+  closeModal(e) {
+    e.preventDefault();
     this.setState({
       isShowing: false,
     });
   }
 
-  openModal() {
+  openModal(e) {
+    e.preventDefault();
     this.setState({
       isShowing: true,
     });
