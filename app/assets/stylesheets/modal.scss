@@ -1,14 +1,29 @@
 .close-modal-btn {
+   border: 2px solid white;
+   font-size: 15px;
+   padding: 5px 18px;
+   font-weight: 600;
+   background: transparent;
+   color: white;
+   text-transform: uppercase;
+   font-family: 'Kanit', sans-serif;
+}
 
+.close-modal-btn:hover {
+   background-color: rgb(54, 53, 53);
 }
 
 .modal-description {
    text-align: center;
+   color: white;
+   font-size: 20px;
 }
 
 .modal-header {
    color: rgb(252, 252, 84);
    font-size: xx-large;
+   font-weight: bold;
+   font-family: Kanit, sans-serif;
 }
 
 .modal-window {
@@ -19,7 +34,7 @@
    position: fixed;
    z-index: 50;
    font-family: 'Baloo 2', sans-serif;
-   background-color: rgb(255, 255, 255);
+   background-color: black;
    height: 50%;
    width: 50%;
    top: 50%;
