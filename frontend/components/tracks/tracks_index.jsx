@@ -39,7 +39,7 @@ class TrackIndex extends React.Component {
       <>
         { 
           this.state.isShowing ? (
-          <div>
+          <div className="modal-overlay">
               <Modal open={this.openModal} close={this.closeModal} />
           </div> 
           ) : null }
