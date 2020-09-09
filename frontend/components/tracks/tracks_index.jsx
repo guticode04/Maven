@@ -6,11 +6,8 @@ class TrackIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isShowing: true,
-    // }
     this.state = {
-      isShowing: sessionStorage.getItem('sessionStorageValue') || true,
+      isShowing: sessionStorage.getItem('modalStatus')
     }
     this.closeModal = this.closeModal.bind(this);
   }
@@ -25,22 +22,26 @@ class TrackIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchTracks();
+    sessionStorage.setItem('modalStatus', true)
   }
 
   componentDidUpdate() {
     if(this.state.isShowing) {
-      sessionStorage.setItem('sessionStorageValue', false)
+      sessionStorage.setItem('modalStatus', false)
     }
   }
 
   render() {
     
     const { tracks } = this.props;
+    const modalStatus = sessionStorage.getItem('modalStatus');
     
     return(
       <>
         { 
+        // has the modal been seen during this session
           this.state.isShowing ? (
+          // modalStatus ? (
           <div className="modal-overlay">
               <Modal close={this.closeModal} />
           </div> 
