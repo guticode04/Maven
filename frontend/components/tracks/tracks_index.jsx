@@ -6,11 +6,13 @@ class TrackIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    // this.state = {
+    //   isShowing: true,
+    // }
     this.state = {
-      isShowing: true,
+      isShowing: sessionStorage.getItem('sessionStorageValue') || true,
     }
     this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
   }
 
   closeModal(e) {
@@ -19,16 +21,16 @@ class TrackIndex extends React.Component {
       isShowing: false,
     });
   }
-
-  openModal(e) {
-    e.preventDefault();
-    this.setState({
-      isShowing: true,
-    });
-  }
+  
 
   componentDidMount() {
     this.props.fetchTracks();
+  }
+
+  componentDidUpdate() {
+    if(this.state.isShowing) {
+      sessionStorage.setItem('sessionStorageValue', false)
+    }
   }
 
   render() {
@@ -40,7 +42,7 @@ class TrackIndex extends React.Component {
         { 
           this.state.isShowing ? (
           <div className="modal-overlay">
-              <Modal open={this.openModal} close={this.closeModal} />
+              <Modal close={this.closeModal} />
           </div> 
           ) : null }
 

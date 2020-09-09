@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Modal = (props) => {
-   const { open, close } = props;
+   const { close } = props;
+
    return(
       <>
          <div className="modal-window">
@@ -13,7 +14,9 @@ const Modal = (props) => {
                   and annotation for those tracks. In order to be able to add tracks,
                   comments, and annotations users must be logged in or create an account. 
                </p>
-               <button className="close-modal-btn" onClick={close}>Close</button>
+               <button className="close-modal-btn" onClick={ close }>
+                  Close
+               </button>
             </div>
          </div>
       </>
