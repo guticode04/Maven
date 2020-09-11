@@ -1,4 +1,6 @@
 import React from 'react';
+import AnnotationShow from '../annotations/annotation_form_container';
+import AnnotationForm from '../annotations/annotations_container';
 
 
 class TrackShow extends React.Component {
@@ -8,6 +10,7 @@ class TrackShow extends React.Component {
     this.state = {
       show: false,
       lyrics: this.props.track ? this.props.track.lyrics : '',
+      selectedText: "",
       startIdx: 0,
       endIdx: 0,
       beginSelection: null,
@@ -77,7 +80,7 @@ class TrackShow extends React.Component {
     let endIdx = window.getSelection().focusOffset + sectionEnd;
 
     //no overlap on existing annotations
-    if (!(start_index) || !(end_index)) {
+    if (!(startIdx) || !(endIdx)) {
       this.setState({ beginSelection: null });
       return null;
     };
@@ -94,10 +97,18 @@ class TrackShow extends React.Component {
         })
       }
     }
+
+    this.setState({
+      startIdx: startIdx,
+      endIdx: endIdx,
+      selectedText: window.getSelection().toString(),
+      beginSelection: null, //resets for next selection
+    })
+
   }
 
   render(){
-    const { track } = this.props;
+    const { track, annotations } = this.props;
     if ( !track ) {
       return null;
     }
@@ -158,6 +169,7 @@ class TrackShow extends React.Component {
                 ) : <p>{track.lyrics}</p>
               }
             </div>
+            {/* Track Information and Annotations */}
             <div className="about-track-header">
               <span className="about-track">About {track.title}</span>
             </div>
