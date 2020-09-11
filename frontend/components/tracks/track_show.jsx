@@ -76,7 +76,13 @@ class TrackShow extends React.Component {
     let startIdx = window.getSelection().anchorOffset + sectionOffSet;
     let endIdx = window.getSelection().focusOffset + sectionEnd;
 
+    //no overlap on existing annotations
+    if (!(start_index) || !(end_index)) {
+      this.setState({ beginInSection: null });
+      return null;
+    };
 
+    
   }
 
   render(){
