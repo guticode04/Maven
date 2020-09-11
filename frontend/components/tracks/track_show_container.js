@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   return ({ 
     track: state.entities.tracks[ownProps.match.params.trackId],
-    annotations: Object.value( state.entities.annotations) || [],
+    // annotations: Object.value( state.entities.annotations) || [],
+    annotations: state.entities.annotations || [],
     currentUser: state.session.currentUser,
   })
 }

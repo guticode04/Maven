@@ -70,8 +70,8 @@ class TrackShow extends React.Component {
 
     if(this.state.beginSelection === null) return;
 
-    let sectionOffSet = parseInt(this.state.beginSelection);
-    let sectionEnd = parseInt(e.target);
+    let sectionOffSet = parseInt(this.state.beginSelection.dataset.offset);
+    let sectionEnd = parseInt(e.target.dataset.offset);
 
     let startIdx = window.getSelection().anchorOffset + sectionOffSet;
     let endIdx = window.getSelection().focusOffset + sectionEnd;
