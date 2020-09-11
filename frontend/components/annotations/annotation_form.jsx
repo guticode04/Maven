@@ -11,7 +11,7 @@ class AnnotationForm extends React.component {
          start: this.props.start_idx,
          end: this.props.end_idx,
       }
-
+      this.handleSubmit = this.handleSubmit.bind(this);
    }
 
    handleSubmit(e) {
