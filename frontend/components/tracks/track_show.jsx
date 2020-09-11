@@ -78,11 +78,22 @@ class TrackShow extends React.Component {
 
     //no overlap on existing annotations
     if (!(start_index) || !(end_index)) {
-      this.setState({ beginInSection: null });
+      this.setState({ beginSelection: null });
       return null;
     };
 
-    
+    //loop through annotations
+    for (let index = 0; index < annotations.length; index++) {
+      const annotation = annotations[index];
+      let annoStartIdx = Math.min(annotations.startIdx, annotations.endIdx);
+      let annoEndIdx = Math.min(annotations.startIdx, annotations.endIdx);
+
+      if( (annoStartIdx > startIdx) && (annoEndIdx > endIdx) ) {
+        this.setState({ 
+          beginSelection: null, 
+        })
+      }
+    }
   }
 
   render(){
