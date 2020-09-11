@@ -88,7 +88,7 @@ class TrackShow extends React.Component {
       let annoStartIdx = Math.min(annotations.startIdx, annotations.endIdx);
       let annoEndIdx = Math.min(annotations.startIdx, annotations.endIdx);
 
-      if( (annoStartIdx > startIdx) && (annoEndIdx > endIdx) ) {
+      if( (annoStartIdx >= startIdx) && (annoEndIdx >= endIdx) ) {
         this.setState({ 
           beginSelection: null, 
         })
