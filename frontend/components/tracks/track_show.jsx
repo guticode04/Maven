@@ -7,12 +7,17 @@ class TrackShow extends React.Component {
     super(props);
     this.state = {
       show: false,
-      lyrics: this.props.track ? this.props.track.lyrics : ''
+      lyrics: this.props.track ? this.props.track.lyrics : '',
+      startIdx: 0,
+      endIdx: 0,
+      beginSelection: null,
     }
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteTrack = this.deleteTrack.bind(this);
+    this.mouseDownHandler = this.mouseDownHandler.bind(this);
+    this.mouseUpHandler = this.mouseUpHandler.bind(this);
   }
 
   componentDidMount(){
@@ -52,6 +57,26 @@ class TrackShow extends React.Component {
     
     this.props.deleteTrack(this.props.track.id)
     .then(() => this.props.history.push(`/`))
+  }
+
+  mouseDownHandler(e) {
+    this.setState({
+      beginSelection: e.target,
+    })
+  }
+
+  mouseUpHandler(e) {
+    const { annotations } = this.props;
+
+    if(this.state.beginSelection === null) return;
+
+    let sectionOffSet = parseInt(this.state.beginSelection);
+    let sectionEnd = parseInt(e.target);
+
+    let startIdx = window.getSelection().anchorOffset + sectionOffSet;
+    let endIdx = window.getSelection().focusOffset + sectionEnd;
+
+
   }
 
   render(){
