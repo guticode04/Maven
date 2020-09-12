@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   deleteAnnotation: () => dispatch(deleteAnnotation()),
 })
 
-export default connect(mapStateToProps,mapStateToProps)(AnnotationShow);
+export default connect(mapStateToProps,mapDispatchToProps)(AnnotationShow);
