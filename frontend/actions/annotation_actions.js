@@ -15,7 +15,7 @@ const removeAnnotation = annotationId => ({
 
 export const fetchAnnotation = annotationId => dispatch => {
   return AnnotationApiUtil.fetchAnnotation(annotationId)
-    .then(annotation => dispatch(receiveAnnotation(track)))
+    .then(annotation => dispatch(receiveAnnotation(annotation)))
 };
 
 export const updateAnnotation = annotation => dispatch => {
