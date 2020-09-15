@@ -29,6 +29,13 @@ export const fetchAnnotation = annotationId => dispatch => {
     .then(annotation => dispatch(receiveAnnotation(annotation)))
 };
 
+export const createAnnotation = annotation => dispatch => {
+  return AnnotationApiUtil.createAnnotation(annotation)
+    .then(createdAnnotation => {
+      return dispatch(receiveAnnotation(createdAnnotation))
+    })
+}
+
 export const updateAnnotation = annotation => dispatch => {
   return AnnotationApiUtil.updateAnnotation(annotation)
     .then(updatedAnnotation => dispatch(receiveAnnotation(updatedAnnotation)))

@@ -7,7 +7,8 @@ import AnnotationForm from './annotation_form';
 // })
 
 const mapDispatchToProps = dispatch => ({
-   createAnnotation: annotation = annotation => dispatch(createAnnotation(annotation)),
+   createAnnotation: annotation => dispatch(createAnnotation(annotation)),
+   // createAnnotation: annotation = annotation => dispatch(createAnnotation(annotation)),
 });
 
 export default connect(null, mapDispatchToProps)(AnnotationForm);
