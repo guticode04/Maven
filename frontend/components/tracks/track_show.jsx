@@ -69,41 +69,40 @@ class TrackShow extends React.Component {
   }
 
   mouseUpHandler(e) {
-    const { annotations } = this.props;
+    // const { annotations } = this.props;
+    // if(this.state.beginSelection === null) return;
 
-    if(this.state.beginSelection === null) return;
+    // let sectionOffSet = parseInt(this.state.beginSelection.dataset.offset);
+    // let sectionEnd = parseInt(e.target.dataset.offset);
 
-    let sectionOffSet = parseInt(this.state.beginSelection.dataset.offset);
-    let sectionEnd = parseInt(e.target.dataset.offset);
+    // let startIdx = window.getSelection().anchorOffset + sectionOffSet;
+    // let endIdx = window.getSelection().focusOffset + sectionEnd;
 
-    let startIdx = window.getSelection().anchorOffset + sectionOffSet;
-    let endIdx = window.getSelection().focusOffset + sectionEnd;
+    // //no overlap on existing annotations
+    // if (!(startIdx) || !(endIdx)) {
+    //   this.setState({ beginSelection: null });
+    //   return null;
+    // };
 
-    //no overlap on existing annotations
-    if (!(startIdx) || !(endIdx)) {
-      this.setState({ beginSelection: null });
-      return null;
-    };
+    // //loop through annotations
+    // for (let index = 0; index < annotations.length; index++) {
+    //   const annotation = annotations[index];
+    //   let annoStartIdx = Math.min(annotations.startIdx, annotations.endIdx);
+    //   let annoEndIdx = Math.min(annotations.startIdx, annotations.endIdx);
 
-    //loop through annotations
-    for (let index = 0; index < annotations.length; index++) {
-      const annotation = annotations[index];
-      let annoStartIdx = Math.min(annotations.startIdx, annotations.endIdx);
-      let annoEndIdx = Math.min(annotations.startIdx, annotations.endIdx);
+    //   if( (annoStartIdx >= startIdx) && (annoEndIdx >= endIdx) ) {
+    //     this.setState({ 
+    //       beginSelection: null, 
+    //     })
+    //   }
+    // }
 
-      if( (annoStartIdx >= startIdx) && (annoEndIdx >= endIdx) ) {
-        this.setState({ 
-          beginSelection: null, 
-        })
-      }
-    }
-
-    this.setState({
-      startIdx: startIdx,
-      endIdx: endIdx,
-      selectedText: window.getSelection().toString(),
-      beginSelection: null, //resets for next selection
-    })
+    // this.setState({
+    //   startIdx: startIdx,
+    //   endIdx: endIdx,
+    //   selectedText: window.getSelection().toString(),
+    //   beginSelection: null, //resets for next selection
+    // })
 
   }
 
@@ -166,12 +165,21 @@ class TrackShow extends React.Component {
                       />
                     </form>
                   </div>
-                ) : <p>{track.lyrics}</p>
+                ) : <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
+                      {track.lyrics}
+                    </p>
               }
             </div>
             {/* Track Information and Annotations */}
             <div className="about-track-header">
               <span className="about-track">About {track.title}</span>
+              {
+                this.state.selectedText.length != 0 ? 
+                <AnnotationForm 
+
+                />
+                : null
+              }
             </div>
           </div>
         </div>
