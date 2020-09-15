@@ -69,6 +69,15 @@ class TrackShow extends React.Component {
   }
 
   mouseUpHandler(e) {
+    let selectedText = window.getSelection().toString();
+    let startIdx = this.state.lyrics.indexOf(selectedText);
+    let endIdx = startIdx + (selectedText.length - 1);
+    this.setState({
+      startIdx: startIdx;
+      endIdx: endIdx,
+      selectedText: window.getSelection().toString(),
+      beginSelection: null, //resets for next selection
+    })
     // const { annotations } = this.props;
     // if(this.state.beginSelection === null) return;
 
