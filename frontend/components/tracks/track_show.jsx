@@ -69,54 +69,23 @@ class TrackShow extends React.Component {
   }
 
   mouseUpHandler(e) {
+
     let selectedText = window.getSelection().toString();
     let startIdx = this.state.lyrics.indexOf(selectedText);
     let endIdx = startIdx + (selectedText.length - 1);
+
     this.setState({
-      startIdx: startIdx;
+      startIdx: startIdx,
       endIdx: endIdx,
       selectedText: window.getSelection().toString(),
-      beginSelection: null, //resets for next selection
+      // beginSelection: null, //resets for next selection
     })
-    // const { annotations } = this.props;
-    // if(this.state.beginSelection === null) return;
-
-    // let sectionOffSet = parseInt(this.state.beginSelection.dataset.offset);
-    // let sectionEnd = parseInt(e.target.dataset.offset);
-
-    // let startIdx = window.getSelection().anchorOffset + sectionOffSet;
-    // let endIdx = window.getSelection().focusOffset + sectionEnd;
-
-    // //no overlap on existing annotations
-    // if (!(startIdx) || !(endIdx)) {
-    //   this.setState({ beginSelection: null });
-    //   return null;
-    // };
-
-    // //loop through annotations
-    // for (let index = 0; index < annotations.length; index++) {
-    //   const annotation = annotations[index];
-    //   let annoStartIdx = Math.min(annotations.startIdx, annotations.endIdx);
-    //   let annoEndIdx = Math.min(annotations.startIdx, annotations.endIdx);
-
-    //   if( (annoStartIdx >= startIdx) && (annoEndIdx >= endIdx) ) {
-    //     this.setState({ 
-    //       beginSelection: null, 
-    //     })
-    //   }
-    // }
-
-    // this.setState({
-    //   startIdx: startIdx,
-    //   endIdx: endIdx,
-    //   selectedText: window.getSelection().toString(),
-    //   beginSelection: null, //resets for next selection
-    // })
-
+    
   }
 
   render(){
-    const { track, annotations } = this.props;
+    // const { track, annotations } = this.props;
+    const { track } = this.props;
     if ( !track ) {
       return null;
     }
@@ -185,7 +154,8 @@ class TrackShow extends React.Component {
               {
                 this.state.selectedText.length != 0 ? 
                 <AnnotationForm 
-
+                  startIdx={this.state.startIdx}
+                  endIdx={this.state.endIdx}
                 />
                 : null
               }

@@ -8,8 +8,8 @@ class AnnotationForm extends React.Component {
          body: '',
          userId: this.props.user.id,
          trackId: this.props.track.id,
-         start: this.props.start_idx,
-         end: this.props.end_idx,
+         start: this.props.startIdx,
+         end: this.props.endIdx,
       }
       this.handleSubmit = this.handleSubmit.bind(this);
    }
@@ -21,7 +21,8 @@ class AnnotationForm extends React.Component {
 
    handleInput(field) {
       return (e) => {
-         this.setState({ [ field ]: e.currentTarget.value })
+         this.setState({ [ field ]: e.target.value })
+         // this.setState({ [ field ]: e.currentTarget.value })
       }
 
    }
