@@ -5,6 +5,12 @@ class AnnotationShow extends React.Component {
     super(props);
   }
 
+  //we are not fetching the annotation that is why body 
+  // is undefined
+
+  componentDidMount() {
+    this.props.fetchAnnotation(this.props.match.params.annotationId);
+  }
 
   render(){
     const {annotation} = this.props;
