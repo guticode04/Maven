@@ -1,7 +1,13 @@
 import * as AnnotationApiUtil from '../utils/annotation_api_utils';
 
+export const RECEIVE_ALL_ANNOTATIONS = "RECEIVE_ALL_ANNOTATIONS";
 export const RECEIVE_ANNOTATION = "RECEIVE_ANNOTATION";
 export const REMOVE_ANNOTATION = "REMOVE_ANNOTATION";
+
+const receiveAnnotations = annotations => ({
+  type: RECEIVE_ALL_ANNOTATIONS,
+  annotations
+})
 
 const receiveAnnotation = annotation => ({
   type: RECEIVE_ANNOTATION,
@@ -12,6 +18,11 @@ const removeAnnotation = annotationId => ({
   type: REMOVE_ANNOTATION,
   annotationId
 });
+
+export const fetchAnnotations = () => dispatch => {
+  return AnnotationApiUtil.fetchAnnotations()
+    .then(annotations => dispatch(receiveAnnotations(annotations)))
+}
 
 export const fetchAnnotation = annotationId => dispatch => {
   return AnnotationApiUtil.fetchAnnotation(annotationId)
