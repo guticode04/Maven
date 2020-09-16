@@ -4,7 +4,7 @@ import AnnotationShow from './annotation_show';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    annotation: state.entities.annotations[ownProps.match.params.annotationId],
+    annotations: state.entities.annotations[ownProps.match.params.annotationId],
   })
 }
 

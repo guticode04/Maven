@@ -16,6 +16,10 @@ class AnnotationForm extends React.Component {
 
    handleSubmit(e) {
       e.preventDefault();
+      const annotationForm = this;
+      this.props.createAnnotation(this.state).then((createdAnnotation) => {
+         annotationForm.props.history.push(`/tracks/${this.state.trackId}`)
+      })
    }
 
    //why is body undefined here:

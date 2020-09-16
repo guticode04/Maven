@@ -1,3 +1,10 @@
+export const fetchAnnotations = () => (
+  $.ajax ({
+    url: `/api/annotations`,
+    method: 'GET'
+  })
+)
+
 export const fetchAnnotation = annotationId => (
   $.ajax ({
     url: `/api/annotations/${annotationId}`,
