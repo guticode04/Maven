@@ -5,8 +5,7 @@ class Api::AnnotationsController < ApplicationController
   # end
 
   def show
-    # @annotation = Annotation.includes(:track_id).find(id: params[:id])
-    @annotation = Annotation.includes(:track_id).find(id: params[:id])
+    @annotation = Annotation.includes(:track).find(id: params[:id])
     render :show
   end
 

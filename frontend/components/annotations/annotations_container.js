@@ -4,7 +4,10 @@ import AnnotationShow from './annotation_show';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
+    //follow it back. why is it undefined
     annotations: state.entities.annotations[ownProps.match.params.annotationId],
+    // annotations: state.entities.annotations,
+    currentUser: state.session.currentUser,
   })
 }
 

@@ -7,8 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   return ({ 
     track: state.entities.tracks[ownProps.match.params.trackId],
-    // annotations: Object.value( state.entities.annotations) || [],
-    annotations: state.entities.annotations || [],
+    annotations: Object.values( state.entities.annotations) || [],
+    // annotations: state.entities.annotations || [],
     currentUser: state.session.currentUser,
   })
 }
@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
   fetchTrack: trackId => dispatch(fetchTrack(trackId)),
   updateTrack: updatedTrack => dispatch(updateTrack(updatedTrack)),
   deleteTrack: trackId => dispatch(deleteTrack(trackId)),
+  fetchAnnotations: () => dispatch(fetchAnnotations()),
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(TrackShow)
