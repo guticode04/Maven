@@ -3,7 +3,7 @@ class Annotation < ApplicationRecord
 
   belongs_to :track,
   class_name: :Track,
-  foreign_key: :track_id,
+  foreign_key: :track_id, #annotations table
   primary_key: :id
 
   belongs_to :user,
