@@ -22,11 +22,8 @@ class AnnotationForm extends React.Component {
       })
    }
 
-   //why is body undefined here:
-   //Uncaught TypeError: Cannot read property 'body' of undefined
    handleInput(field) {
       return (e) => {
-         // this.setState({ [ field ]: e.target.value })
          this.setState({ [ field ]: e.currentTarget.value })
       }
 

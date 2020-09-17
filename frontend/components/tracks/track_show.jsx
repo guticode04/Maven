@@ -154,6 +154,7 @@ class TrackShow extends React.Component {
               {
                 this.state.selectedText.length != 0 ? 
                 <AnnotationForm 
+                  // body={this.state.selectedText}
                   startIdx={this.state.startIdx}
                   endIdx={this.state.endIdx}
                 />

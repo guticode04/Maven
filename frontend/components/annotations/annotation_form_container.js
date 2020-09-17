@@ -3,7 +3,7 @@ import { createAnnotation } from '../../actions/annotation_actions';
 import AnnotationForm from './annotation_form';
 
 // const mapStateToProps = (state, ownProps) => ({
-//    annotation: state.entities.annotation
+//    annotation: state.entities.annotations
 // })
 
 const mapDispatchToProps = dispatch => ({

@@ -3,10 +3,12 @@ import { fetchAnnotation, updateAnnotation, deleteAnnotation } from '../../actio
 import AnnotationShow from './annotation_show';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log('state',state);
+  console.log('ownProps',ownProps);
+  //ownProps is only startIdx and endIdx
+  // debugger
   return ({
-    //follow it back. why is it undefined
     annotations: state.entities.annotations[ownProps.match.params.annotationId],
-    // annotations: state.entities.annotations,
     currentUser: state.session.currentUser,
   })
 }
