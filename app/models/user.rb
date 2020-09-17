@@ -6,6 +6,11 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :annotations,
+  class_name: :Annotation,
+  foreign_key: :user_id,
+  primary_key: :id
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(input, password)
