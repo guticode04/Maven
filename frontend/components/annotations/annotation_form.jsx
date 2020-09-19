@@ -6,10 +6,10 @@ class AnnotationForm extends React.Component {
       super(props);
       this.state = {
          body: '',
-         userId: this.props.user.id,
-         trackId: this.props.track.id,
-         start: this.props.startIdx,
-         end: this.props.endIdx,
+         // userId: this.props.user.id,
+         // trackId: this.props.track.id,
+         // startIdx: this.props.startIdx,
+         // endIdx: this.props.endIdx,
       }
       this.handleSubmit = this.handleSubmit.bind(this);
    }

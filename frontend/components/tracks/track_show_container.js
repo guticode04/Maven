@@ -4,6 +4,7 @@ import TrackShow from './track_show';
 import { fetchAnnotations } from "../../actions/annotation_actions";
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   return ({ 
     track: state.entities.tracks[ownProps.match.params.trackId],
     annotations: Object.values( state.entities.annotations) || [],

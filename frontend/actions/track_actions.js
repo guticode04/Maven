@@ -21,11 +21,13 @@ const removeTrack = trackId => ({
 })
 
 export const fetchTracks = () => dispatch => {
+  // debugger
   return TrackApiUtil.fetchTracks()
     .then(tracks => dispatch(receiveTracks(tracks)))
 }
 
 export const fetchTrack = trackId => dispatch => {
+  // debugger
   return TrackApiUtil.fetchTrack(trackId)
     .then(track => dispatch(receiveTrack(track)))
 }
