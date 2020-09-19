@@ -1,6 +1,6 @@
 import React from 'react';
-import AnnotationShow from '../annotations/annotation_form_container';
-import AnnotationForm from '../annotations/annotations_container';
+import AnnotationShow from '../annotations/annotation_show_container';
+import AnnotationForm from '../annotations/annotation_form_container';
 
 
 class TrackShow extends React.Component {

@@ -20,19 +20,19 @@ const removeAnnotation = annotationId => ({
 });
 
 export const fetchAnnotations = () => dispatch => {
-  debugger
+  
   return AnnotationApiUtil.fetchAnnotations()
     .then(annotations => dispatch(receiveAnnotations(annotations)))
 }
 
 export const fetchAnnotation = annotationId => dispatch => {
-  debugger
+  
   return AnnotationApiUtil.fetchAnnotation(annotationId)
     .then(annotation => dispatch(receiveAnnotation(annotation)))
 };
 
 export const createAnnotation = annotation => dispatch => {
-  debugger
+  
   return AnnotationApiUtil.createAnnotation(annotation)
     .then(createdAnnotation => {
       return dispatch(receiveAnnotation(createdAnnotation))
