@@ -9,12 +9,14 @@ class TrackShow extends React.Component {
     super(props);
     this.state = {
       show: false,
+      showAnnoButton: true,
       lyrics: this.props.track ? this.props.track.lyrics : '',
       selectedText: "",
       startIdx: 0,
       endIdx: 0,
       beginSelection: null,
     }
+    this.hideAnnoButton = this.hideAnnoButton.bind(this);
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,14 +47,19 @@ class TrackShow extends React.Component {
     }
   }
 
+  hideForm(e){
+    e.preventDefault();
+    this.setState({ show: false })
+  }
+
   showForm(e){
       e.preventDefault();
       this.setState({ show: true });
   }
 
-  hideForm(e){
+  hideAnnoButton(e) {
     e.preventDefault();
-    this.setState({ show: false })
+    this.setState({ showAnnoButton: false })
   }
 
   deleteTrack(e) {
@@ -153,8 +160,19 @@ class TrackShow extends React.Component {
               <span className="about-track">About {track.title}</span>
               {
                 this.state.selectedText.length != 0 ? 
+                //  && this.state.showAnnoForm ? 
+                // this.setState({showAnnoButton: true})
+
+                  this.state.showAnnoButton ?
+                    <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
+                      Start Maven Annotation
+                    </button>
+                      : 
+                    // null 
+                    //   :
                 <AnnotationForm 
                   // body=""
+                  // showAnnoForm={this.state.showAnnoForm}
                   startIdx={this.state.startIdx}
                   endIdx={this.state.endIdx}
                   userId={this.props.currentUser.id}

@@ -22,6 +22,7 @@ class AnnotationForm extends React.Component {
       // .then(() => {
       //    annotationForm.props.history.push(`/tracks/${this.state.track_id}`)
       // })
+      // this.props.showAnnoForm = false;
    }
 
    handleInput(field) {
