@@ -6,20 +6,22 @@ class AnnotationForm extends React.Component {
       super(props);
       this.state = {
          body: '',
-         userId: this.props.userId,
-         trackId: this.props.trackId,
-         startIdx: this.props.startIdx,
-         endIdx: this.props.endIdx,
+         user_id: this.props.userId,
+         track_id: this.props.trackId,
+         start_idx: this.props.startIdx,
+         end_idx: this.props.endIdx,
       }
       this.handleSubmit = this.handleSubmit.bind(this);
    }
 
    handleSubmit(e) {
+      debugger
       e.preventDefault();
-      const annotationForm = this;
-      this.props.createAnnotation(this.state).then((createdAnnotation) => {
-         annotationForm.props.history.push(`/tracks/${this.state.trackId}`)
-      })
+      // const annotationForm = this;
+      this.props.createAnnotation(this.state);
+      // .then(() => {
+      //    annotationForm.props.history.push(`/tracks/${this.state.track_id}`)
+      // })
    }
 
    handleInput(field) {

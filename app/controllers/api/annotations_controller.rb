@@ -11,10 +11,10 @@ class Api::AnnotationsController < ApplicationController
 
   def create
     # debugger
-    # @annotation = Annotation.new(annotation_params)
-    @annotation = current_user.annotations.new(annotation_params)
+    @annotation = Annotation.new(annotation_params)
+    # @annotation = current_user.annotations.new(annotation_params)
     # @annotation.user_id = current_user.id
-    @annotation.track_id = params[:track_id]
+    # @annotation.track_id = params[:track_id]
     if @annotation.save
       render :show
     else
