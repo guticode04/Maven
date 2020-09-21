@@ -10,6 +10,7 @@ class TrackShow extends React.Component {
     this.state = {
       show: false,
       showAnnoButton: true,
+      showAnnoForm: true,
       lyrics: this.props.track ? this.props.track.lyrics : '',
       selectedText: "",
       startIdx: 0,
@@ -23,10 +24,12 @@ class TrackShow extends React.Component {
     this.deleteTrack = this.deleteTrack.bind(this);
     this.mouseDownHandler = this.mouseDownHandler.bind(this);
     this.mouseUpHandler = this.mouseUpHandler.bind(this);
+    this.toggleAnnoForm = this.toggleAnnoForm.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchTrack(this.props.match.params.trackId)
+    //need to fetchAnnotations for track
   }
 
   componentDidUpdate(oldProps){
@@ -88,6 +91,12 @@ class TrackShow extends React.Component {
       // beginSelection: null, //resets for next selection
     })
     
+  }
+
+  toggleAnnoForm() {
+    // return (() => {
+      this.setState({ showAnnoForm: false})
+    // })
   }
 
   render(){
@@ -160,25 +169,32 @@ class TrackShow extends React.Component {
               <span className="about-track">About {track.title}</span>
               {
                 this.state.selectedText.length != 0 ? 
-                //  && this.state.showAnnoForm ? 
-                // this.setState({showAnnoButton: true})
 
                   this.state.showAnnoButton ?
                     <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
                       Start Maven Annotation
                     </button>
+
                       : 
-                    // null 
-                    //   :
-                <AnnotationForm 
-                  // body=""
-                  // showAnnoForm={this.state.showAnnoForm}
-                  startIdx={this.state.startIdx}
-                  endIdx={this.state.endIdx}
-                  userId={this.props.currentUser.id}
-                  trackId={track.id}
-                />
-                : null
+
+                    this.state.showAnnoForm ?
+                      //What if i pass it a function so that it'll close once the
+                      //save button is hit
+                      <AnnotationForm 
+                        toggleAnnoForm={this.toggleAnnoForm}
+                        startIdx={this.state.startIdx}
+                        endIdx={this.state.endIdx}
+                        userId={this.props.currentUser.id}
+                        trackId={track.id}
+                      />
+                      
+                    :
+
+                    <AnnotationShow />
+
+                :
+                
+               null
               }
             </div>
           </div>
