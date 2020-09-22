@@ -1,7 +1,7 @@
 import * as TrackApiUtil from '../utils/track_api_utils';
 
 export const RECEIVE_ALL_TRACKS = "RECEIVE_ALL_TRACKS";
-export const RECEIVE_TRACK = "RECEIVE_TRACK";
+export const RECEIVE_TRACK_AND_ANNOTATIONS = "RECEIVE_TRACK_AND_ANNOTATIONS";
 export const REMOVE_TRACK = "REMOVE_TRACK";
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 
@@ -10,9 +10,9 @@ const receiveTracks = tracks => ({
   tracks
 });
 
-const receiveTrack = track => ({
-  type: RECEIVE_TRACK,
-  track
+const receiveTrackAndAnnotations = payload => ({
+  type: RECEIVE_TRACK_AND_ANNOTATIONS,
+  payload
 });
 
 const removeTrack = trackId => ({
@@ -29,7 +29,7 @@ export const fetchTracks = () => dispatch => {
 export const fetchTrack = trackId => dispatch => {
   // debugger
   return TrackApiUtil.fetchTrack(trackId)
-    .then(track => dispatch(receiveTrack(track)))
+    .then(payload => dispatch(receiveTrackAndAnnotations(payload)))
 }
 
 export const createTrack = track => dispatch => {

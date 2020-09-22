@@ -1,6 +1,6 @@
 import {
   RECEIVE_ALL_TRACKS,
-  RECEIVE_TRACK,
+  RECEIVE_TRACK_AND_ANNOTATIONS,
   REMOVE_TRACK,
   RECEIVE_ARTIST
 } from "../actions/track_actions";
@@ -10,9 +10,9 @@ const tracksReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_TRACKS:
       return Object.assign({}, oldState, action.tracks)
-    case RECEIVE_TRACK:
+    case RECEIVE_TRACK_AND_ANNOTATIONS:
       // debugger
-      return Object.assign({}, oldState, {[action.track.id]: action.track});
+      return Object.assign({}, oldState, {[action.payload.id]: action.payload});
     case REMOVE_TRACK:
       let nextState = Object.assign({}, oldState);
       delete nextState[action.trackId];
