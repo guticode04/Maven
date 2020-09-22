@@ -10,7 +10,8 @@ class AnnotationShow extends React.Component {
   }
 
   render(){
-    const {annotation} = this.props;
+    const { annotations } = this.props;
+    debugger;
     return(
       <>
       <div className="annotation-container">

@@ -2,7 +2,7 @@ class Api::AnnotationsController < ApplicationController
   
   # dont think I actually need this because in track show all annotations for
   # that track should show up
-  
+
   # def index
   #   @track = Track.find_by(id: params[:id])
   #   @annotations = @track.annotations
@@ -11,7 +11,7 @@ class Api::AnnotationsController < ApplicationController
   # end
 
   def show
-    @annotation = Annotation.includes(:track).find(id: params[:id])
+    @annotation = Annotation.find(params[:id])
     render :show
   end
 

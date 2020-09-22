@@ -99,6 +99,20 @@ class TrackShow extends React.Component {
     // })
   }
 
+  //stuck. need to comeback to this!!!
+
+  // highlightAnnotatedLyrics() {
+  //   let { track } = this.props;
+  //   let annotations = track.annotations;
+  //   annotations.forEach(annotation => {
+  //     let start = annotation.start_idx;
+  //     let end = annotation.end_idx;
+  //     let length = end - start;
+  //     let highlightedText = track.lyrics[start, length];
+
+  //   });
+  // }
+
   render(){
     // const { track, annotations } = this.props;
     const { track } = this.props;
@@ -190,7 +204,9 @@ class TrackShow extends React.Component {
                       
                     :
 
-                    <AnnotationShow />
+                    <AnnotationShow 
+                      annotations={ track.annotations }
+                    />
 
                 :
                 
