@@ -15,7 +15,14 @@ class Api::TracksController < ApplicationController
   end
   
   def show
-    @track = Track.includes(:artist).find(params[:id])
+    # @track = Track.includes(:artist).find(params[:id])
+    @track = Track.includes(:artist, :annotations).find(params[:id])
+    if @track
+      render :show
+    else
+      render json: @track.errors.full_messages, status: 422
+    end
+    # render :show
   end
   
   def update
@@ -40,6 +47,10 @@ class Api::TracksController < ApplicationController
 
   def artist_params
     params.require(:track).permit(:name)
+  end
+
+  def annotation_params
+    params.require(:track).permit(:track_id)
   end
 
 end

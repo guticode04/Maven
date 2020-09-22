@@ -1,11 +1,14 @@
 class Api::AnnotationsController < ApplicationController
   
-  def index
-    @track = Track.find_by(id: params[:id])
-    @annotations = @tracks.annotations
-    render :index
-    # @annotation = Track.find(params[:track_id]).annotations.includes(:user)
-  end
+  # dont think I actually need this because in track show all annotations for
+  # that track should show up
+  
+  # def index
+  #   @track = Track.find_by(id: params[:id])
+  #   @annotations = @track.annotations
+  #   render :index
+  #   # @annotation = Track.find(params[:track_id]).annotations.includes(:user)
+  # end
 
   def show
     @annotation = Annotation.includes(:track).find(id: params[:id])
