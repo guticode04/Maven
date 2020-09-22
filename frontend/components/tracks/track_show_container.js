@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   fetchTrack: trackId => dispatch(fetchTrack(trackId)),
   updateTrack: updatedTrack => dispatch(updateTrack(updatedTrack)),
   deleteTrack: trackId => dispatch(deleteTrack(trackId)),
-  fetchAnnotations: () => dispatch(fetchAnnotations()),
+  // fetchAnnotations: () => dispatch(fetchAnnotations()),
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(TrackShow)

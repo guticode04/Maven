@@ -6,11 +6,11 @@ class AnnotationShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAnnotation(this.props.match.params.annotationId);
+    this.props.fetchAnnotation(this.props.annotation.id);
   }
 
   render(){
-    const { annotations } = this.props;
+    const { annotation } = this.props;
     debugger;
     return(
       <>
