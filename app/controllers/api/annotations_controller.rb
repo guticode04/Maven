@@ -11,21 +11,26 @@ class Api::AnnotationsController < ApplicationController
   # end
 
   def show
+    
     @annotation = Annotation.find(params[:id])
-    render :show
+    
+    if @annotation
+      render :show
+    else
+      render json: @annotation.errors.full_message, status: 422
+    end
+    
   end
 
   def create
-    # debugger
     @annotation = Annotation.new(annotation_params)
-    # @annotation = current_user.annotations.new(annotation_params)
-    # @annotation.user_id = current_user.id
-    # @annotation.track_id = params[:track_id]
+   
     if @annotation.save
       render :show
     else
       render json: @annotation.errors.full_messages, status: 422
     end
+
   end
 
   def update

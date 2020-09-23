@@ -28,8 +28,8 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount(){
+    debugger
     this.props.fetchTrack(this.props.match.params.trackId)
-    //need to fetchAnnotations for track
   }
 
   componentDidUpdate(oldProps){

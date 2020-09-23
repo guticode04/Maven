@@ -22,7 +22,7 @@ class Api::TracksController < ApplicationController
     else
       render json: @track.errors.full_messages, status: 422
     end
-    # render :show
+    
   end
   
   def update
