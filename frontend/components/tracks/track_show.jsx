@@ -94,10 +94,10 @@ class TrackShow extends React.Component {
   }
 
   toggleAnnoForm() {
-    
-    return (() => {
-      this.setState({ showAnnoForm: false})
-    })
+    this.setState({showAnnoForm: false});
+    // return (() => {
+    //   this.setState({ showAnnoForm: false})
+    // })
   }
 
   //stuck. need to comeback to this!!!

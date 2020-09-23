@@ -19,7 +19,7 @@ class Api::AnnotationsController < ApplicationController
     else
       render json: @annotation.errors.full_message, status: 422
     end
-    
+
   end
 
   def create

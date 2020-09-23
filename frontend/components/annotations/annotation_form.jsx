@@ -23,13 +23,8 @@ class AnnotationForm extends React.Component {
       // debugger
       e.preventDefault();
       // const annotationForm = this;
-      this.props.createAnnotation(this.state);
-      // .then(
-      // // .then(() => {
-      //    // annotationForm.props.history.push(`/tracks/${this.state.track_id}`)
-      // // })
-      //    () => {this.props.toggleAnnoForm();}
-      // )
+      this.props.createAnnotation(this.state)
+         .then(() => {this.props.toggleAnnoForm()})
    }
 
    handleInput(field) {
