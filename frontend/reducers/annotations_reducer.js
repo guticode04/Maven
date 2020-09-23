@@ -11,7 +11,7 @@ const annotationsReducer = ( oldState = {} , action ) => {
       // debugger
       return Object.assign({}, oldState, action.annotations)
     case RECEIVE_ANNOTATION:
-      debugger
+      
       return Object.assign( {}, oldState, { [action.annotation.id]: action.annotation });
     case REMOVE_ANNOTATION:
       let nextState = Object.assign( {}, oldState );

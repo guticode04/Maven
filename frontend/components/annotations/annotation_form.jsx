@@ -14,9 +14,10 @@ class AnnotationForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
    }
 
-   // componentWillMount(){
-   //    this.props.toggleAnnoForm()
-   // }
+   componentWillUnmount(){
+      debugger
+      this.props.toggleAnnoForm()
+   }
 
    handleSubmit(e) {
       // debugger

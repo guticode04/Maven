@@ -28,7 +28,7 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount(){
-    debugger
+    
     this.props.fetchTrack(this.props.match.params.trackId)
   }
 
@@ -94,9 +94,10 @@ class TrackShow extends React.Component {
   }
 
   toggleAnnoForm() {
-    // return (() => {
+    
+    return (() => {
       this.setState({ showAnnoForm: false})
-    // })
+    })
   }
 
   //stuck. need to comeback to this!!!
