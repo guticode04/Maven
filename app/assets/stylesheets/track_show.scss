@@ -132,3 +132,15 @@
   font-weight: 600;
   background: transparent;
 }
+
+.delete-btn:hover {
+  background-color: rgb(245, 243, 243);
+}
+
+.start-annotation-btn {
+  border: 2px solid black;
+  font-size: 15px;
+  padding: .25em .25em;
+  font-weight: 600;
+  background: transparent;
+}

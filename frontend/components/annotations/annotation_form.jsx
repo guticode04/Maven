@@ -14,15 +14,10 @@ class AnnotationForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
    }
 
-   componentWillUnmount(){
-      debugger
-      this.props.toggleAnnoForm()
-   }
-
    handleSubmit(e) {
-      // debugger
       e.preventDefault();
-      // const annotationForm = this;
+      //may not need to toggleAnnoForm can just push to 
+      // created annotations like in tracks form
       this.props.createAnnotation(this.state)
          .then(() => {this.props.toggleAnnoForm()})
    }

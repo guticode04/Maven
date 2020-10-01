@@ -27,7 +27,7 @@ const removeAnnotation = annotationId => ({
 // }
 
 export const fetchAnnotation = annotationId => dispatch => {
-  debugger
+  // debugger
   return AnnotationApiUtil.fetchAnnotation(annotationId)
     .then(annotation => dispatch(receiveAnnotation(annotation)))
 };
