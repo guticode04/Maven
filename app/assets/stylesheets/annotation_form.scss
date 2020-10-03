@@ -8,14 +8,15 @@
    border: 2px solid rgb(172, 172, 240);
    width: 90%;
    height: 200px;
+   padding: .5em;
 }
 
 .add-annotation-btn {
    margin-top: 10px;
    width: fit-content;
    padding: .25em .75em;
-   color: lightgreen;
-   border: 2px solid green;
+   color: rgb(44, 252, 3);
+   border: 2px solid rgb(44, 252, 3);
    background: transparent;
    font-size: 15px;
    font-weight: 600;

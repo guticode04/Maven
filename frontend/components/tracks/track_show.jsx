@@ -195,7 +195,8 @@ class TrackShow extends React.Component {
                     this.state.showAnnoForm ?
                       //What if i pass it a function so that it'll close once the
                       //save button is hit
-                      <AnnotationForm 
+                      <AnnotationForm
+                        showAnnoForm={this.state.showAnnoForm}
                         toggleAnnoForm={this.toggleAnnoForm}
                         startIdx={this.state.startIdx}
                         endIdx={this.state.endIdx}
@@ -204,10 +205,10 @@ class TrackShow extends React.Component {
                       />
                       
                     :
-
-                    <AnnotationShow 
-                      // annotations={ track.annotations }
-                    />
+                      null
+                    // <AnnotationShow 
+                    //   // annotations={ track.annotations }
+                    // />
 
                 :
                 

@@ -1,4 +1,5 @@
 import React from 'react';
+import AnnotationShow from './annotation_show';
 
 class AnnotationForm extends React.Component {
 
@@ -15,10 +16,15 @@ class AnnotationForm extends React.Component {
    }
 
    handleSubmit(e) {
+      debugger
       e.preventDefault();
       //may not need to toggleAnnoForm can just push to 
       // created annotations like in tracks form
+      const annoForm = this;
       this.props.createAnnotation(this.state)
+         // .then((createdAnnotation) => {
+         //    annoForm.props.history.push(`/tracks/${this.props.trackId}/${createdAnnotation.annotation.id}`)
+         // })
          .then(() => {this.props.toggleAnnoForm()})
    }
 
@@ -29,24 +35,37 @@ class AnnotationForm extends React.Component {
 
    }
 
+   // componentDidUpdate() {
+   //    debugger
+   // }
+
    render() {
 
       return(
          <>
-            <form className="annotation-form">
-               <textarea
-                  className="add-annotation"
-                  placeholder="Don't just put the lyrics in your own words - drop some knowledge"
-                  onChange={this.handleInput('body')}
-                  value={this.state.body}
+         {
+            this.props.showAnnoForm ?
+               <form className="annotation-form">
+                  <textarea
+                     className="add-annotation"
+                     placeholder="Don't just put the lyrics in your own words - drop some knowledge"
+                     onChange={this.handleInput('body')}
+                     value={this.state.body}
+                  />
+                  <button
+                     className="add-annotation-btn"
+                     onClick={this.handleSubmit}
+                  >
+                     Save
+                  </button>
+               </form>
+
+               :
+
+               <AnnotationShow 
+                  // annotation = {}
                />
-               <button
-                  className="add-annotation-btn"
-                  onClick={this.handleSubmit}
-               >
-                  Save
-               </button>
-            </form>
+         }
          </>
       )
    }
