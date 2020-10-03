@@ -7,16 +7,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :tracks, except: [:new, :edit]
-
-    # here annotations belong to a tracks so we want them nested
-    # resulting route will be:
-    # get 'tracks/1/annotations'
-    # getting all the annotations for the track
-
-    # resources :tracks, except: [:new, :edit] do
-    #   resources :annotations, only: [:index]
-    # end
     
     resources :annotations, except: [:index]
+    
   end
 end

@@ -16,15 +16,9 @@ class AnnotationForm extends React.Component {
    }
 
    handleSubmit(e) {
-      debugger
+      // debugger
       e.preventDefault();
-      //may not need to toggleAnnoForm can just push to 
-      // created annotations like in tracks form
-      const annoForm = this;
       this.props.createAnnotation(this.state)
-         // .then((createdAnnotation) => {
-         //    annoForm.props.history.push(`/tracks/${this.props.trackId}/${createdAnnotation.annotation.id}`)
-         // })
          .then(() => {this.props.toggleAnnoForm()})
    }
 
@@ -35,16 +29,13 @@ class AnnotationForm extends React.Component {
 
    }
 
-   // componentDidUpdate() {
-   //    debugger
-   // }
 
    render() {
 
       return(
          <>
-         {
-            this.props.showAnnoForm ?
+         {/* { comeback to this after annotations show up on track show
+            this.props.showAnnoForm ? */}
                <form className="annotation-form">
                   <textarea
                      className="add-annotation"
@@ -60,12 +51,12 @@ class AnnotationForm extends React.Component {
                   </button>
                </form>
 
-               :
+               {/* :
 
                <AnnotationShow 
                   // annotation = {}
                />
-         }
+         } */}
          </>
       )
    }

@@ -205,10 +205,10 @@ class TrackShow extends React.Component {
                       />
                       
                     :
-                      null
-                    // <AnnotationShow 
-                    //   // annotations={ track.annotations }
-                    // />
+                      // null
+                    <AnnotationShow 
+                      // annotations={ track.annotations }
+                    />
 
                 :
                 
