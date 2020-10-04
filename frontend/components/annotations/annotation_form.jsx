@@ -36,20 +36,20 @@ class AnnotationForm extends React.Component {
          <>
          {/* { comeback to this after annotations show up on track show
             this.props.showAnnoForm ? */}
-               <form className="annotation-form">
-                  <textarea
-                     className="add-annotation"
-                     placeholder="Don't just put the lyrics in your own words - drop some knowledge"
-                     onChange={this.handleInput('body')}
-                     value={this.state.body}
+            <form className="annotation-form">
+               <textarea
+                  className="add-annotation"
+                  placeholder="Don't just put the lyrics in your own words - drop some knowledge"
+                  onChange={this.handleInput('body')}
+                  value={this.state.body}
                   />
-                  <button
-                     className="add-annotation-btn"
-                     onClick={this.handleSubmit}
+               <button
+                  className="add-annotation-btn"
+                  onClick={this.handleSubmit}
                   >
-                     Save
-                  </button>
-               </form>
+                  Save
+               </button>
+            </form>
 
                {/* :
 

@@ -186,10 +186,13 @@ class TrackShow extends React.Component {
                 this.state.selectedText.length != 0 ? 
 
                   this.state.showAnnoButton ?
-                    <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
-                      Start Maven Annotation
-                    </button>
 
+                    <div className="start-annotation-btn-container">
+                      <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
+                        Start Maven Annotation
+                      </button>
+                    </div>
+                    
                       : 
 
                     this.state.showAnnoForm ?

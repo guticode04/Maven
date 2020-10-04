@@ -137,6 +137,14 @@
   background-color: rgb(245, 243, 243);
 }
 
+.start-annotation-btn-container {
+  z-index: 50;
+  position: fixed;
+  top: 50%;
+  border-left: 3px solid rgb(172, 172, 240);
+  padding-left: 10px;
+}
+
 .start-annotation-btn {
   border: 2px solid black;
   font-size: 15px;

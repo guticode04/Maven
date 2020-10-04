@@ -1,6 +1,12 @@
 .annotation-form {
    display: flex;
    flex-direction: column;
+   position: fixed;
+   top: 50%;
+   z-index: 50;
+   width: 25%;
+   border-left: 3px solid rgb(172, 172, 240);
+   padding-left: 10px;
 }
 
 .add-annotation {
