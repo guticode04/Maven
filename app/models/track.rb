@@ -12,6 +12,9 @@ class Track < ApplicationRecord
   foreign_key: :artist_id,
   primary_key: :id
 
-
+  has_many :comments,
+  class_name: :Comment,
+  foreign_key: :track_id,
+  primary_key: :id
 
 end
