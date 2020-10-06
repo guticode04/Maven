@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     
     resources :annotations, except: [:index]
     
+    resources :comments, except: [:index]
+
   end
 end
