@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
       if @comment
          render :show
       else
-         render json: @comment.errors.full_message, status: 422
+         render json: @comment.errors.full_messages, status: 422
       end
    end
 
@@ -14,13 +14,25 @@ class Api::CommentsController < ApplicationController
       if @annotation.save
          render :show
       else
-         render json: @comment.errors.full_message, status: 422
+         render json: @comment.errors.full_messages, status: 422
    end
 
    def update
+      @comment = Comment.find(params[:id])
+      if @comment.update(comment_params)
+         render :show
+      else
+         render json: @comment.errors.full_messages, status: 422
+      end
    end
 
    def destroy
+      @comment = Comment.find(params[:id])
+      if @comment.destroy
+         render json: @comment.id
+      else
+         render json: @comment.errors.full_messages, status: 422
+      end
    end
 
    private
