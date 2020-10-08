@@ -1,15 +1,23 @@
 .comment-form {
    display: flex;
    flex-direction: column;
+   padding: 10px;
+   width: 90%;
 }
 
 .add-comment {
    resize: none;
-
+   padding: .5em;
+   border: 2px solid;
 }
 
 .add-comment-btn {
    width: fit-content;
    margin-top: 15px;
-   backgroun: transparent;
+   background: transparent;
+   font-size: 15px;
+   font-weight: 600;
+   color: rgb(44, 252, 3);
+   border: 2px solid rgb(44, 252, 3);
+   padding: .25em .5em;
 }
