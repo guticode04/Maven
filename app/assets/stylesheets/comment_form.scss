@@ -1,0 +1,15 @@
+.comment-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.add-comment {
+   resize: none;
+
+}
+
+.add-comment-btn {
+   width: fit-content;
+   margin-top: 15px;
+   backgroun: transparent;
+}
