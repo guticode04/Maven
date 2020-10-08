@@ -1,6 +1,7 @@
 import React from 'react';
 import AnnotationShow from '../annotations/annotation_show_container';
 import AnnotationForm from '../annotations/annotation_form_container';
+import CommentForm from '../comments/comment_form';
 
 
 class TrackShow extends React.Component {
@@ -178,8 +179,10 @@ class TrackShow extends React.Component {
                       {track.lyrics}
                     </p>
               }
+            <CommentForm />
             </div>
-            {/* Track Information and Annotations */}
+
+            {/* Track Information and Annotations Column */}
             <div className="about-track-header">
               <span className="about-track">About {track.title}</span>
               {
@@ -192,7 +195,7 @@ class TrackShow extends React.Component {
                         Start Maven Annotation
                       </button>
                     </div>
-                    
+
                       : 
 
                     this.state.showAnnoForm ?
