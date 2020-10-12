@@ -1,8 +1,11 @@
 class Api::CommentsController < ApplicationController
 
+   # May not need this because when we fetch track we also fetch comments
+   # look at track show. Might be double fetching same comments
    def index
       # @comments = Track.includes(:comments)
-      @comments = Comment.all
+      # @comments = Comment.all
+      @comments = Track.find(params[:track_id]).comments
    end
 
    def show

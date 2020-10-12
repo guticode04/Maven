@@ -2,6 +2,7 @@ import React from 'react';
 import AnnotationShow from '../annotations/annotation_show_container';
 import AnnotationForm from '../annotations/annotation_form_container';
 import CommentForm from '../comments/comment_form_container';
+import CommentIndex from '../comments/comments_index';
 
 
 class TrackShow extends React.Component {
@@ -29,7 +30,7 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount(){
-    
+    // debugger
     this.props.fetchTrack(this.props.match.params.trackId)
   }
 
@@ -117,7 +118,14 @@ class TrackShow extends React.Component {
 
   render(){
     // const { track, annotations } = this.props;
+    // debugger
     const { track } = this.props;
+    //gives array of all comments for track
+    // [ { id: 3, body: "Love this song", user_id: 1, track_id: 1 } ]
+    // can only declare this.variable once track has been fetched otherwise
+    // error occurs
+    // Object.values(this.props.track.comments)[0].body
+    // const comments = Object.values(track.comments); 
     if ( !track ) {
       return null;
     }
@@ -183,6 +191,7 @@ class TrackShow extends React.Component {
               trackId={track.id}
               userId={this.props.currentUser.id}
             />
+            <CommentIndex />
             </div>
 
             {/* Track Information and Annotations Column */}

@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchTrack, updateTrack, deleteTrack } from '../../actions/track_actions';
 import TrackShow from './track_show';
-import { fetchAnnotations } from "../../actions/annotation_actions";
+// import { selectAllTrackComments } from '../../reducers/selectors';
+// import { fetchAnnotations } from "../../actions/annotation_actions";
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
   return ({ 
     track: state.entities.tracks[ownProps.match.params.trackId],
+    // comments: Object.values(state.entities.tracks[ownProps.match.params.trackId].comments),
     // annotations: Object.values( state.entities.annotations) || [],
     currentUser: state.session.currentUser,
   })

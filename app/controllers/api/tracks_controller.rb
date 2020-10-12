@@ -16,7 +16,7 @@ class Api::TracksController < ApplicationController
   
   def show
     # @track = Track.includes(:artist).find(params[:id])
-    @track = Track.includes(:artist, :annotations).find(params[:id])
+    @track = Track.includes(:artist, :annotations, :comments).find(params[:id])
     if @track
       render :show
     else
@@ -50,6 +50,10 @@ class Api::TracksController < ApplicationController
   end
 
   def annotation_params
+    params.require(:track).permit(:track_id)
+  end
+
+  def comment_params
     params.require(:track).permit(:track_id)
   end
 
