@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentIndexItem from './comments_index_item';
 
 const CommentIndex = props => {
    const comments = props.comments;
@@ -9,9 +10,10 @@ const CommentIndex = props => {
             <ul className="comments-list">
                {
                   comments.map((comment,idx) => {
-                     <li key={comment.id}>
-                        {comment.body}
-                     </li>
+                     // <li key={comment.id}>
+                     //    {comment.body}
+                     // </li>
+                     <CommentIndexItem key={idx} comment={comment} />
                   })
                }
             </ul>
