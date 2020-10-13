@@ -1,10 +1,22 @@
 import React from 'react';
 
 const CommentIndex = props => {
-
+   const comments = props.comments;
+   debugger
    return(
       <>
-         Hello from comments index
+         <div className="comments-index-container">
+            <ul className="comments-list">
+               {
+                  comments.map((comment,idx) => {
+                     <li key={comment.id}>
+                        {comment.body}
+                     </li>
+                  })
+               }
+            </ul>
+         </div>
+         {/* Hello from comments index */}
       </>
    )
 }

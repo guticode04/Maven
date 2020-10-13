@@ -191,7 +191,9 @@ class TrackShow extends React.Component {
               trackId={track.id}
               userId={this.props.currentUser.id}
             />
-            <CommentIndex />
+            <CommentIndex 
+              comments = {Object.values(track.comments)}
+            />
             </div>
 
             {/* Track Information and Annotations Column */}
