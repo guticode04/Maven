@@ -10,12 +10,14 @@
 }
 
 .comment-index-item {
-   border-top: 2px solid rgb(172, 172, 240);
+   border-top: 1px solid rgb(172, 172, 240);
    padding: 10px;
+   font-family: 'Baloo 2', sans-serif;
 }
 
 .comment-body {
    color: black;
+   padding-left: 5px;
 }
 
 .comment-author-container {
@@ -26,10 +28,14 @@
    color: black;
    padding: 0 0 10px 0;
    font-size: medium;
+   font-weight: bolder;
 }
 
 .comment-author-icon {
    color: black;
-   font-size: small;
-   margin-right: 10px;
+   font-size: 9px;
+}
+
+.icon-background {
+   color: rgb(218, 216, 216)
 }

@@ -8,7 +8,10 @@ const CommentIndexItem = props => {
          <li className="comment-index-item">
             <div className="comment-author-container">
                <div className="comment-author-icon">
-                  <i className="fas fa-user"></i>
+                  <span className="fa-stack">
+                     <i className="fas fa-circle fa-stack-2x icon-background"></i>
+                     <i className="fas fa-user fa-stack-1x"></i>
+                  </span>
                </div>
                <div className="comment-author">
                   User Nickname Goes Here
