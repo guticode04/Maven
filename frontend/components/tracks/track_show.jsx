@@ -187,13 +187,15 @@ class TrackShow extends React.Component {
                       {track.lyrics}
                     </p>
               }
-            <CommentForm 
-              trackId={track.id}
-              userId={this.props.currentUser.id}
-            />
-            <CommentIndex 
-              comments = {Object.values(track.comments)}
-            />
+              <div className="comments-container">
+                <CommentForm 
+                  trackId={track.id}
+                  userId={this.props.currentUser.id}
+                />
+                <CommentIndex 
+                  comments = {Object.values(track.comments)}
+                />
+              </div>
             </div>
 
             {/* Track Information and Annotations Column */}
