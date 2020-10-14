@@ -10,9 +10,6 @@ const CommentIndex = props => {
             <ul className="comments-list">
                {
                   comments.map((comment,idx) => {
-                     // <li key={comment.id}>
-                     //    {comment.body}
-                     // </li>
                      return (
                         <CommentIndexItem key={idx} comment={comment} />
                      )
@@ -20,7 +17,6 @@ const CommentIndex = props => {
                }
             </ul>
          </div>
-         {/* Hello from comments index */}
       </>
    )
 }

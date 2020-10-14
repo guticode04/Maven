@@ -6,6 +6,7 @@ const CommentIndexItem = props => {
    return(
       // <>
          <li className="comment-index-item">
+            <div className="comment-author">User Nickname Goes Here</div>
             <div className="comment-body">
                { comment.body }
             </div>
