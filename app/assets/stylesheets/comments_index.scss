@@ -18,6 +18,18 @@
    color: black;
 }
 
+.comment-author-container {
+   display: flex;
+}
+
 .comment-author {
    color: black;
+   padding: 0 0 10px 0;
+   font-size: medium;
+}
+
+.comment-author-icon {
+   color: black;
+   font-size: small;
+   margin-right: 10px;
 }
