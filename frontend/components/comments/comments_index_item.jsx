@@ -57,7 +57,7 @@ const CommentIndexItem = props => {
                      </span>
                   </div>
                   <div className="comment-author">
-                     {props.currentUser.nickname}
+                     {/* {props.currentUser.nickname} */}
                   </div>
                </div>
                <div className="comment-date">{timeCreated}</div>

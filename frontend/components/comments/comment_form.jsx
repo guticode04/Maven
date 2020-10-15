@@ -14,6 +14,12 @@ class CommentForm extends React.Component {
       this.showFullForm = this.showFullForm.bind(this);
    }
 
+   componentWillUnmount() {
+      if ( this.hideFullForm ) {
+         document.removeEventListener('click', this.hideFullForm);
+      }
+   }
+
    handleSubmit(e) {
       // debugger
       e.preventDefault();
@@ -45,12 +51,6 @@ class CommentForm extends React.Component {
    render() {
       return(
          <>
-            <input
-               className="comment-input"
-               placeholder="Add a comment"
-               onClick={this.showFullForm}
-            >
-            </input>
             {
                this.state.showForm ? (
                   <form className="comment-form" ref={this.ref}>
@@ -67,7 +67,14 @@ class CommentForm extends React.Component {
                         Submit
                      </button>
                   </form>
-               ) : null
+               ) : (
+                  <input
+                     className="comment-input"
+                     placeholder="Add a comment"
+                     onClick={this.showFullForm}
+                  >
+                  </input>
+               )
             }
          </>
       )

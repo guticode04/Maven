@@ -188,14 +188,22 @@ class TrackShow extends React.Component {
                     </p>
               }
               <div className="comments-container">
-                <CommentForm 
-                  trackId={track.id}
-                  userId={this.props.currentUser.id}
-                />
-                <CommentIndex 
-                  comments = {Object.values(track.comments)}
-                  currentUser={this.props.currentUser}
-                />
+                {
+                  this.props.loggedIn ?
+                  <CommentForm 
+                    trackId={track.id}
+                    userId={this.props.currentUser.id}
+                  />
+                  : null
+                }
+                {
+                  track.comments ?
+                  <CommentIndex 
+                    comments = {Object.values(track.comments)}
+                    // currentUser={this.props.currentUser}
+                  />
+                  : null
+                }
               </div>
             </div>
 

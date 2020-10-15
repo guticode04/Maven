@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     track: state.entities.tracks[ownProps.match.params.trackId],
     // comments: Object.values(state.entities.tracks[ownProps.match.params.trackId].comments),
     // annotations: Object.values( state.entities.annotations) || [],
+    loggedIn: Boolean(state.session.currentUser),
     currentUser: state.session.currentUser,
   })
 }
