@@ -10,7 +10,7 @@
 .add-comment {
    resize: none;
    padding: .5em;
-   border: 2px solid;
+   border: 2px solid rgb(218, 216, 216);
 }
 
 .add-comment-btn {
@@ -22,4 +22,11 @@
    color: rgb(44, 252, 3);
    border: 2px solid rgb(44, 252, 3);
    padding: .25em .5em;
+}
+
+.comment-input {
+   padding: 5px;
+   border: 2px solid rgb(218, 216, 216);
+   width: 94%;
+   margin-top: 10px;
 }

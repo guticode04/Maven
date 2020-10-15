@@ -46,6 +46,7 @@ class CommentForm extends React.Component {
       return(
          <>
             <input
+               className="comment-input"
                placeholder="Add a comment"
                onClick={this.showFullForm}
             >
