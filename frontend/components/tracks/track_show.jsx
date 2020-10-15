@@ -194,6 +194,7 @@ class TrackShow extends React.Component {
                 />
                 <CommentIndex 
                   comments = {Object.values(track.comments)}
+                  currentUser={this.props.currentUser}
                 />
               </div>
             </div>

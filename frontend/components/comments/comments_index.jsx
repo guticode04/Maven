@@ -11,7 +11,9 @@ const CommentIndex = props => {
                {
                   comments.map((comment,idx) => {
                      return (
-                        <CommentIndexItem key={idx} comment={comment} />
+                        <CommentIndexItem key={idx} comment={comment} 
+                           currentUser={props.currentUser}
+                        />
                      )
                   })
                }
