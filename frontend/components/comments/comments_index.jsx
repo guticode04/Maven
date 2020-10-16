@@ -1,13 +1,13 @@
 import React from 'react';
 import CommentIndexItem from './comments_index_item';
 
-const CommentIndex = props => {
-// class CommentIndex extends React.Component {
-//    constructor(props) {
-//       super(props);
-//    }
+// const CommentIndex = props => {
+class CommentIndex extends React.Component {
+   constructor(props) {
+      super(props);
+   }
 
-//    render() {
+   render() {
       const comments = props.comments;
       // debugger
       return(
@@ -27,7 +27,7 @@ const CommentIndex = props => {
             </div>
          </>
       )
-   // }
+   }
 }
 
 export default CommentIndex;
