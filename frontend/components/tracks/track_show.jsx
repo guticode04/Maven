@@ -2,7 +2,7 @@ import React from 'react';
 import AnnotationShow from '../annotations/annotation_show_container';
 import AnnotationForm from '../annotations/annotation_form_container';
 import CommentForm from '../comments/comment_form_container';
-import CommentIndex from '../comments/comments_index';
+import CommentIndex from '../comments/comments_index_container';
 
 
 class TrackShow extends React.Component {

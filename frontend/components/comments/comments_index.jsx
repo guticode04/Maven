@@ -5,11 +5,15 @@ import CommentIndexItem from './comments_index_item';
 class CommentIndex extends React.Component {
    constructor(props) {
       super(props);
-   }
+   };
+   
+   componentDidMount() {
+      this.props.fetchAllTrackComments();
+   };
 
    render() {
-      const comments = props.comments;
-      // debugger
+      const comments = this.props.comments;
+      debugger
       return(
          <>
             <div className="comments-index-container">
