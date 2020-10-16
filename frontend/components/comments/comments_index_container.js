@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-   fetchAllTrackComments: () => dispatch(fetchAllTrackComments()),
+   fetchAllTrackComments: (trackId) => dispatch(fetchAllTrackComments(trackId)),
 });
 
 // export default connect(mapStateToProps,null)(CommentIndex);

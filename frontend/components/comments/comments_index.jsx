@@ -6,14 +6,14 @@ class CommentIndex extends React.Component {
    constructor(props) {
       super(props);
    };
-   
+
    componentDidMount() {
-      this.props.fetchAllTrackComments();
+      this.props.fetchAllTrackComments(this.props.trackId);
    };
 
    render() {
       const comments = this.props.comments;
-      debugger
+      // debugger
       return(
          <>
             <div className="comments-index-container">

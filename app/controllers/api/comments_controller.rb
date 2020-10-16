@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
    def index
       # @comments = Track.includes(:comments)
       # @comments = Comment.all
-      @comments = Track.find(params[:track_id]).comments
+      @comments = Track.find(params[:trackId]).comments
    end
 
    def show
