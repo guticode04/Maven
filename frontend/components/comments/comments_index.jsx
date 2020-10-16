@@ -1,19 +1,17 @@
 import React from 'react';
 import CommentIndexItem from './comments_index_item';
 
-// const CommentIndex = props => {
 class CommentIndex extends React.Component {
    constructor(props) {
       super(props);
    };
 
    componentDidMount() {
-      this.props.fetchAllTrackComments(this.props.trackId);
+      this.props.fetchAllTrackComments();
    };
 
    render() {
       const comments = this.props.comments;
-      // debugger
       return(
          <>
             <div className="comments-index-container">
@@ -21,9 +19,7 @@ class CommentIndex extends React.Component {
                   {
                      comments.map((comment,idx) => {
                         return (
-                           <CommentIndexItem key={idx} comment={comment} 
-                              // currentUser={props.currentUser}
-                           />
+                           <CommentIndexItem key={idx} comment={comment} />
                         )
                      })
                   }

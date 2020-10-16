@@ -10,6 +10,4 @@ const mapDispatchToProps = dispatch => ({
    fetchAllTrackComments: (trackId) => dispatch(fetchAllTrackComments(trackId)),
 });
 
-// export default connect(mapStateToProps,null)(CommentIndex);
-// export default connect(null, mapDispatchToProps)(CommentIndex);
 export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);

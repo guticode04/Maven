@@ -8,7 +8,7 @@ const commentsReducer = (oldState = {}, action) => {
    Object.freeze(oldState);
    switch (action.type) {
       case RECEIVE_ALL_TRACK_COMMENTS:
-         return Object.assign({}, oldState, { [action.payload.id]: action.payload })
+         return Object.assign({}, oldState, action.comments)
       case RECEIVE_COMMENT:
          return Object.assign({}, oldState, { [action.comment.id]: action.comment })
       case REMOVE_COMMENT:

@@ -4,11 +4,10 @@ export const RECEIVE_ALL_TRACK_COMMENTS = "RECEIVE_ALL_TRACK_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
-const receiveAllTrackComments = payload => {
-   // debugger
+const receiveAllTrackComments = comments => {
    return({
       type: RECEIVE_ALL_TRACK_COMMENTS,
-      payload
+      comments
    });
 }
 

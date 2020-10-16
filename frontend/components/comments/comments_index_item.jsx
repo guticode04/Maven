@@ -2,7 +2,6 @@ import React from 'react';
 
 const CommentIndexItem = props => {
    const comment = props.comment;
-   // debugger
    let timeCreated = "";
    let date = Date.now() - Date.parse(comment.created_at);
    let seconds = date / 1000;
@@ -57,7 +56,7 @@ const CommentIndexItem = props => {
                      </span>
                   </div>
                   <div className="comment-author">
-                     {/* {props.currentUser.nickname} */}
+                     {comment.author_name}
                   </div>
                </div>
                <div className="comment-date">{timeCreated}</div>

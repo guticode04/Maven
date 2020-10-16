@@ -1,10 +1,6 @@
 class Api::CommentsController < ApplicationController
 
-   # May not need this because when we fetch track we also fetch comments
-   # look at track show. Might be double fetching same comments
    def index
-      # @comments = Track.find(params[:trackId]).comments
-      # render :index
       @comments = Comment.all
    end
 
