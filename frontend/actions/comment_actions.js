@@ -5,7 +5,7 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const receiveAllTrackComments = payload => {
-   debugger
+   // debugger
    return({
       type: RECEIVE_ALL_TRACK_COMMENTS,
       payload
@@ -22,8 +22,8 @@ const removeComment = commentId => ({
    commentId
 });
 
-export const fetchAllTrackComments = (trackId) => dispatch => {
-   return CommentApiUtil.fetchAllTrackComments(trackId)
+export const fetchAllTrackComments = () => dispatch => {
+   return CommentApiUtil.fetchAllTrackComments()
       .then(comments => dispatch(receiveAllTrackComments(comments)))
 }
 

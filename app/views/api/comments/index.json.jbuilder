@@ -1,16 +1,11 @@
+def find_author_name(comment) 
+   User.find_by(id: comment.user_id).nickname
+end
+
 @comments.each do |comment|
    json.set! comment.id do
       json.partial! "api/comments/comment", comment: comment
+      json.set!('author_name', find_author_name(comment))
    end
 end
 
-json.users do
-   @comments.each do |comment|
-      json.set! comment.user_id do
-         json.extract! @user, :nickname
-      end
-   end
-end
-
-#should produce:
-# users: {1: { nickname: usernickname }}

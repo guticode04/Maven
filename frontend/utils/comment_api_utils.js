@@ -1,4 +1,4 @@
-export const fetchAllTrackComments = (trackId) => (
+export const fetchAllTrackComments = () => (
    $.ajax ({
       url: `/api/comments`,
       method: 'GET',
