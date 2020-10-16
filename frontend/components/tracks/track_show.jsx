@@ -196,12 +196,9 @@ class TrackShow extends React.Component {
                   />
                   : null
                 }
-                {
-                  track.comments ?
-                  <CommentIndex
-                  />
-                  : null
-                }
+                <CommentIndex
+                  trackId={track.id}
+                />
               </div>
             </div>
 

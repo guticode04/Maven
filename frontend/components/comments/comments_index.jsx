@@ -12,19 +12,24 @@ class CommentIndex extends React.Component {
 
    render() {
       const comments = this.props.comments;
+      let filteredComments = comments.filter(comment => comment.track_id === this.props.trackId);
       return(
          <>
-            <div className="comments-index-container">
-               <ul className="comments-list">
-                  {
-                     comments.map((comment,idx) => {
-                        return (
-                           <CommentIndexItem key={idx} comment={comment} />
-                        )
-                     })
-                  }
-               </ul>
-            </div>
+            {
+               filteredComments.length !== 0 ? (
+                  <div className="comments-index-container">
+                     <ul className="comments-list">
+                        {
+                           filteredComments.map((comment,idx) => {
+                              return (
+                                 <CommentIndexItem key={idx} comment={comment} />
+                              )
+                           })
+                        }
+                     </ul>
+                  </div>
+               ) : null
+            }
          </>
       )
    }
