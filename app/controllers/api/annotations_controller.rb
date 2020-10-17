@@ -1,17 +1,10 @@
 class Api::AnnotationsController < ApplicationController
-  
-  # dont think I actually need this because in track show all annotations for
-  # that track should show up
 
-  # def index
-  #   @track = Track.find_by(id: params[:id])
-  #   @annotations = @track.annotations
-  #   render :index
-  #   # @annotation = Track.find(params[:track_id]).annotations.includes(:user)
-  # end
+  def index
+    @annotations = Annotation.all
+  end
 
   def show
-    
     @annotation = Annotation.find(params[:id])
     
     if @annotation
@@ -19,7 +12,6 @@ class Api::AnnotationsController < ApplicationController
     else
       render json: @annotation.errors.full_message, status: 422
     end
-
   end
 
   def create

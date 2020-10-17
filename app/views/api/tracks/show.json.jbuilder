@@ -8,10 +8,3 @@ json.annotations do
   end
 end
 
-json.comments do
-  @track.comments.each do |comment|
-    json.set!(comment.id) do
-      json.extract! comment, :id, :body, :user_id, :track_id, :created_at
-    end
-  end
-end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :tracks, except: [:new, :edit]
     
-    resources :annotations, except: [:index]
+    resources :annotations
     
     resources :comments
 

@@ -1,1 +1,1 @@
-json.extract! annotation, :id, :body, :user_id, :track_id
+json.extract! annotation, :id, :body, :user_id, :track_id, :start_idx, :end_idx
