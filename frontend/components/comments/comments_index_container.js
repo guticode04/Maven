@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { fetchAllTrackComments } from '../../actions/comment_actions';
+import { selectAllComments } from '../../reducers/selectors';
 import CommentIndex from './comments_index';
 
 const mapStateToProps = (state) => ({
-   comments: Object.values(state.entities.comments),
+   comments: selectAllComments(state),
 });
 
 const mapDispatchToProps = dispatch => ({

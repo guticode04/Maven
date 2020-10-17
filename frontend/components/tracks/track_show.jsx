@@ -31,7 +31,8 @@ class TrackShow extends React.Component {
 
   componentDidMount(){
     // debugger
-    this.props.fetchTrack(this.props.match.params.trackId)
+    this.props.fetchTrack(this.props.match.params.trackId);
+    this.props.fetchAnnotations();
   }
 
   componentDidUpdate(oldProps){
@@ -117,8 +118,9 @@ class TrackShow extends React.Component {
   // }
 
   render(){
+    const { track, annotations } = this.props;
+    let trackAnnotations = annotations.filter(annotation => (annotation.track_id === track.id));
     // debugger
-    const { track } = this.props;
     
     if ( !track ) {
       return null;
@@ -227,7 +229,7 @@ class TrackShow extends React.Component {
                     :
                       // null
                     <AnnotationShow 
-                      // annotations={ track.annotations }
+                      annotations={ trackAnnotations }
                     />
 
                 :
