@@ -49,7 +49,28 @@ const TrackLyrics = (props) => {
 
    return(
       <>
-         
+         {
+            trackAnnotations.length !== 0 ?
+            <div className="track-lyrics" ref={track.lyrics}>
+               <p 
+                  onMouseUp={mouseUpHandler}
+                  onMouseDown={mouseDownHandler}
+                  data-offset={prev}
+               >
+                  { annotatedAndAnnotatableLyrics }
+               </p>
+            </div>
+               :
+            <div className="track-lyrics" ref={track.lyrics}> 
+               <p
+                  onMouseUp={mouseUpHandler}
+                  onMouseDown={mouseDownHandler}
+                  data-offset={0}
+               >
+                  { track.lyrics }
+               </p>
+            </div>
+         }
       </>
    )
 }

@@ -3,7 +3,7 @@ import AnnotationShow from '../annotations/annotation_show_container';
 import AnnotationForm from '../annotations/annotation_form_container';
 import CommentForm from '../comments/comment_form_container';
 import CommentIndex from '../comments/comments_index_container';
-
+import TrackLyrics from './track_lyrics';
 
 class TrackShow extends React.Component {
 
@@ -205,10 +205,21 @@ class TrackShow extends React.Component {
                       />
                     </form>
                   </div>
-                ) : <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
-                      {track.lyrics}
-                    </p>
+                ) 
+                  : 
+                <TrackLyrics
+                  track={track}
+                  trackAnnotations={trackAnnotations}
+                  mouseUpHandler={this.mouseUpHandler}
+                  mouseDownHandler={this.mouseDownHandler}
+                  selectedText={selectedText}
+                />
+                // <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
+                //       {track.lyrics}
+                // </p>
+
               }
+
               <div className="comments-container">
                 {
                   this.props.loggedIn ?
