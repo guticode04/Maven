@@ -82,16 +82,41 @@ class TrackShow extends React.Component {
   }
 
   mouseUpHandler(e) {
+    const { track, annotations } = this.props;
+    let trackAnnotations = annotations.filter(annotation => annotation.track_id === track.id);
 
-    let selectedText = window.getSelection().toString();
-    let startIdx = this.state.lyrics.indexOf(selectedText);
-    let endIdx = startIdx + (selectedText.length - 1);
+    // let selectedText = window.getSelection().toString();
+    // let startIdx = this.state.lyrics.indexOf(selectedText);
+    // let endIdx = startIdx + (selectedText.length - 1);
+
+    let offsetForSelection = parseInt(this.state.beginSelection.dataset.offset);
+
+    let endSelection = parseInt(e.target.dataset.offset);
+
+    let startIdx = window.getSelection().anchorOffset + offsetForSelection;
+    let endIdx = window.getSelection().focusOffset + endSelection;
+
+    if( !(startIdx) || !(endIdx) ) {
+      this.setState({
+        beginSelection: null
+      });
+      return null;
+    }
+
+    for ( let i = 0; i < trackAnnotations.length; i++ ) {
+      let annotationStartIdx = Math.min(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
+      let annotationEndIdx = Math.max(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
+      if( (annotationStartIdx >= startIdx) && (annotationEndIdx <= endIdx) ) {
+        this.setState( { beginSelection: null } );
+        return null;
+      }
+    }
 
     this.setState({
       startIdx: startIdx,
       endIdx: endIdx,
       selectedText: window.getSelection().toString(),
-      // beginSelection: null, //resets for next selection
+      beginSelection: null, //resets for next selection
     })
     
   }
