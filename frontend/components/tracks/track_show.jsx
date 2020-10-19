@@ -106,6 +106,7 @@ class TrackShow extends React.Component {
     for ( let i = 0; i < trackAnnotations.length; i++ ) {
       let annotationStartIdx = Math.min(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
       let annotationEndIdx = Math.max(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
+      //for new annotation overlap outside/inside existing annotation
       if( (annotationStartIdx >= startIdx) && (annotationEndIdx <= endIdx) ) {
         this.setState( { beginSelection: null } );
         return null;
