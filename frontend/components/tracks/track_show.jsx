@@ -238,40 +238,48 @@ class TrackShow extends React.Component {
             {/* Track Information and Annotations Column */}
             <div className="about-track-header">
               <span className="about-track">About {track.title}</span>
-              {
-                this.state.selectedText.length != 0 ? 
+              { 
+                this.props.loggedIn ? (
 
-                  this.state.showAnnoButton ?
-
-                    <div className="start-annotation-btn-container">
-                      <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
-                        Start Maven Annotation
-                      </button>
-                    </div>
-
-                      : 
-
-                    this.state.showAnnoForm ?
-                      //What if i pass it a function so that it'll close once the
-                      //save button is hit
-                      <AnnotationForm
-                        showAnnoForm={this.state.showAnnoForm}
-                        toggleAnnoForm={this.toggleAnnoForm}
-                        startIdx={this.state.startIdx}
-                        endIdx={this.state.endIdx}
-                        userId={this.props.currentUser.id}
-                        trackId={track.id}
-                      />
-                      
+                  // {
+                    this.state.selectedText.length != 0 ? 
+  
+                      this.state.showAnnoButton ?
+  
+                        <div className="start-annotation-btn-container">
+                          <button className="start-annotation-btn" onClick={this.hideAnnoButton}>
+                            Start Maven Annotation
+                          </button>
+                        </div>
+  
+                          : 
+  
+                        this.state.showAnnoForm ?
+                          //What if i pass it a function so that it'll close once the
+                          //save button is hit
+                          <AnnotationForm
+                            showAnnoForm={this.state.showAnnoForm}
+                            toggleAnnoForm={this.toggleAnnoForm}
+                            startIdx={this.state.startIdx}
+                            endIdx={this.state.endIdx}
+                            userId={this.props.currentUser.id}
+                            trackId={track.id}
+                          />
+                          
+                        :
+                          // null
+                        <AnnotationShow 
+                          annotations={ trackAnnotations }
+                        />
+  
                     :
-                      // null
-                    <AnnotationShow 
-                      annotations={ trackAnnotations }
-                    />
-
-                :
-                
-               null
+                    
+                  null
+                  // }
+                )
+                  :
+                  
+                null
               }
             </div>
           </div>
