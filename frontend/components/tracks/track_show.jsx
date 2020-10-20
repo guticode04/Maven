@@ -212,7 +212,7 @@ class TrackShow extends React.Component {
                   trackAnnotations={trackAnnotations}
                   mouseUpHandler={this.mouseUpHandler}
                   mouseDownHandler={this.mouseDownHandler}
-                  selectedText={selectedText}
+                  selectedText={this.state.selectedText}
                 />
                 // <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
                 //       {track.lyrics}
