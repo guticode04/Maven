@@ -4,7 +4,7 @@ const TrackLyrics = (props) => {
    // will be passing following form track show
    const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, selectedText } = props;
    const lyricsEle = useRef(null);
-
+   // debugger
    // build jsx objects to be displayed
    let annotatedAndAnnotatableLyrics = [];
    let prev = 0;

@@ -85,10 +85,6 @@ class TrackShow extends React.Component {
     const { track, annotations } = this.props;
     let trackAnnotations = annotations.filter(annotation => annotation.track_id === track.id);
 
-    // let selectedText = window.getSelection().toString();
-    // let startIdx = this.state.lyrics.indexOf(selectedText);
-    // let endIdx = startIdx + (selectedText.length - 1);
-
     let offsetForSelection = parseInt(this.state.beginSelection.dataset.offset);
 
     let endSelection = parseInt(e.target.dataset.offset);
@@ -124,24 +120,7 @@ class TrackShow extends React.Component {
 
   toggleAnnoForm() {
     this.setState({showAnnoForm: false});
-    // return (() => {
-    //   this.setState({ showAnnoForm: false})
-    // })
   }
-
-  //stuck. need to comeback to this!!!
-
-  // highlightAnnotatedLyrics() {
-  //   let { track } = this.props;
-  //   let annotations = track.annotations;
-  //   annotations.forEach(annotation => {
-  //     let start = annotation.start_idx;
-  //     let end = annotation.end_idx;
-  //     let length = end - start;
-  //     let highlightedText = track.lyrics[start, length];
-
-  //   });
-  // }
 
   render(){
     const { track, annotations } = this.props;
@@ -255,8 +234,7 @@ class TrackShow extends React.Component {
                           : 
   
                         this.state.showAnnoForm ?
-                          //What if i pass it a function so that it'll close once the
-                          //save button is hit
+                        
                           <AnnotationForm
                             showAnnoForm={this.state.showAnnoForm}
                             toggleAnnoForm={this.toggleAnnoForm}
@@ -278,7 +256,7 @@ class TrackShow extends React.Component {
                   // }
                 )
                   :
-                  
+
                 null
               }
             </div>
