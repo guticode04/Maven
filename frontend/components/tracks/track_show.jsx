@@ -14,7 +14,7 @@ class TrackShow extends React.Component {
       showAnnoButton: true,
       showAnnoForm: true,
       lyrics: this.props.track ? this.props.track.lyrics : '',
-      selectedText: "",
+      annotatedText: "",
       startIdx: 0,
       endIdx: 0,
       beginSelection: null,
@@ -112,7 +112,7 @@ class TrackShow extends React.Component {
     this.setState({
       startIdx: startIdx,
       endIdx: endIdx,
-      selectedText: window.getSelection().toString(),
+      annotatedText: window.getSelection().toString(),
       beginSelection: null, //resets for next selection
     })
     
@@ -191,7 +191,6 @@ class TrackShow extends React.Component {
                   trackAnnotations={trackAnnotations}
                   mouseUpHandler={this.mouseUpHandler}
                   mouseDownHandler={this.mouseDownHandler}
-                  selectedText={this.state.selectedText}
                 />
                 // <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
                 //       {track.lyrics}
@@ -221,7 +220,7 @@ class TrackShow extends React.Component {
                 this.props.loggedIn ? (
 
                   // {
-                    this.state.selectedText.length != 0 ? 
+                    this.state.annotatedText.length != 0 ? 
   
                       this.state.showAnnoButton ?
   
@@ -234,7 +233,7 @@ class TrackShow extends React.Component {
                           : 
   
                         this.state.showAnnoForm ?
-                        
+
                           <AnnotationForm
                             showAnnoForm={this.state.showAnnoForm}
                             toggleAnnoForm={this.toggleAnnoForm}
@@ -242,6 +241,7 @@ class TrackShow extends React.Component {
                             endIdx={this.state.endIdx}
                             userId={this.props.currentUser.id}
                             trackId={track.id}
+                            annotatedText={this.state.annotatedText}
                           />
                           
                         :

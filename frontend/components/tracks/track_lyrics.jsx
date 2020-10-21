@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 const TrackLyrics = (props) => {
    // will be passing following form track show
-   const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, selectedText } = props;
+   const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, } = props;
    const lyricsEle = useRef(null);
    // debugger
    // build jsx objects to be displayed
@@ -13,7 +13,7 @@ const TrackLyrics = (props) => {
    for ( let i = 0; i < trackAnnotations.length; i++ ) {
       let annotationStart = Math.min(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
       let annotationEnd = Math.max(trackAnnotations[i].start_idx, trackAnnotations[i].end_idx);
-      // let annotation = trackAnnotations[i];
+      let annotation = trackAnnotations[i];
 
       let beforeAnnotation = track.lyrics.slice(prev, annotationStart);
 
@@ -30,7 +30,7 @@ const TrackLyrics = (props) => {
             unselectable="on"
             className="highlight-annotation"
          >
-            { selectedText }
+            { annotation.annotated_text }
          </a>
       )
 

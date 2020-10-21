@@ -11,6 +11,7 @@ class AnnotationForm extends React.Component {
          track_id: this.props.trackId,
          start_idx: this.props.startIdx,
          end_idx: this.props.endIdx,
+         annotated_text: this.props.annotatedText,
       }
       this.handleSubmit = this.handleSubmit.bind(this);
    }
