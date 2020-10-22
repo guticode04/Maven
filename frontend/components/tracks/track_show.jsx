@@ -208,10 +208,6 @@ class TrackShow extends React.Component {
                   mouseDownHandler={this.mouseDownHandler}
                   setAnnotationId={this.setAnnotationId}
                 />
-                // <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
-                //       {track.lyrics}
-                // </p>
-
               }
 
               <div className="comments-container">

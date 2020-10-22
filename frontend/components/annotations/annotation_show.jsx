@@ -5,8 +5,10 @@ class AnnotationShow extends React.Component {
     super(props);
   }
 
+  // Probably don't need this either
+
   componentDidMount() {
-    // debugger
+  //   debugger
     this.props.fetchAnnotation(this.props.annotation);
   }
 
