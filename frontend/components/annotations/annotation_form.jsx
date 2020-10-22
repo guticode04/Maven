@@ -19,6 +19,7 @@ class AnnotationForm extends React.Component {
    handleSubmit(e) {
       // debugger
       e.preventDefault();
+      const annotationForm = this;
       this.props.createAnnotation(this.state)
          .then(() => {this.props.toggleAnnoForm()})
    }

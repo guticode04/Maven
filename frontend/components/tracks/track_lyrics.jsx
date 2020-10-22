@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 const TrackLyrics = (props) => {
    // will be passing following form track show
-   const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, } = props;
+   const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, setAnnotationId } = props;
    const lyricsEle = useRef(null);
    // debugger
    // build jsx objects to be displayed
@@ -29,6 +29,9 @@ const TrackLyrics = (props) => {
             key={j++}
             unselectable="on"
             className="highlight-annotation"
+            onClick={() => {
+               setAnnotationId(annotation.id)
+            }}
          >
             { annotation.annotated_text }
          </a>

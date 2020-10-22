@@ -18,6 +18,7 @@ class TrackShow extends React.Component {
       startIdx: 0,
       endIdx: 0,
       beginSelection: null,
+      getAnnotationId: null,
     }
     this.hideAnnoButton = this.hideAnnoButton.bind(this);
     this.showForm = this.showForm.bind(this);
@@ -26,6 +27,7 @@ class TrackShow extends React.Component {
     this.deleteTrack = this.deleteTrack.bind(this);
     this.mouseDownHandler = this.mouseDownHandler.bind(this);
     this.mouseUpHandler = this.mouseUpHandler.bind(this);
+    this.setAnnotationId = this.setAnnotationId.bind(this);
     this.toggleAnnoForm = this.toggleAnnoForm.bind(this);
   }
 
@@ -118,6 +120,12 @@ class TrackShow extends React.Component {
     
   }
 
+  setAnnotationId(annoId) {
+    this.setState({
+      getAnnotationId: annoId,
+    })
+  }
+
   toggleAnnoForm() {
     this.setState({showAnnoForm: false});
   }
@@ -191,6 +199,7 @@ class TrackShow extends React.Component {
                   trackAnnotations={trackAnnotations}
                   mouseUpHandler={this.mouseUpHandler}
                   mouseDownHandler={this.mouseDownHandler}
+                  setAnnotationId={this.setAnnotationId}
                 />
                 // <p onMouseDown={this.mouseDownHandler} onMouseUp={this.mouseUpHandler}>
                 //       {track.lyrics}
@@ -242,6 +251,7 @@ class TrackShow extends React.Component {
                             userId={this.props.currentUser.id}
                             trackId={track.id}
                             annotatedText={this.state.annotatedText}
+                            setAnnotationId={this.setAnnotationId}
                           />
                           
                         :
