@@ -13,7 +13,8 @@ const mapDispatchToProps = dispatch => ({
   fetchAnnotation: annotationId => dispatch(fetchAnnotation(annotationId)),
   updateAnnotation: () => dispatch(updateAnnotation()),
   deleteAnnotation: () => dispatch(deleteAnnotation()),
-  createAnnotation: annotation => dispatch(createAnnotation(annotation))
+  // createAnnotation: annotation => dispatch(createAnnotation(annotation))
 })
 
+// export default connect(null, mapDispatchToProps)(AnnotationShow);
 export default connect(mapStateToProps,mapDispatchToProps)(AnnotationShow);

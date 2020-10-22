@@ -20,6 +20,7 @@ class TrackShow extends React.Component {
       beginSelection: null,
       getAnnotationId: null,
     }
+    this.clearAnnotatedText = this.clearAnnotatedText.bind(this);
     this.hideAnnoButton = this.hideAnnoButton.bind(this);
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
@@ -29,6 +30,12 @@ class TrackShow extends React.Component {
     this.mouseUpHandler = this.mouseUpHandler.bind(this);
     this.setAnnotationId = this.setAnnotationId.bind(this);
     this.toggleAnnoForm = this.toggleAnnoForm.bind(this);
+  }
+
+  clearAnnotatedText(){
+    this.setState({
+      annotatedText: ""
+    })
   }
 
   componentDidMount(){
@@ -252,12 +259,14 @@ class TrackShow extends React.Component {
                             trackId={track.id}
                             annotatedText={this.state.annotatedText}
                             setAnnotationId={this.setAnnotationId}
+                            clearAnnotatedText={this.clearAnnotatedText}
                           />
                           
                         :
                           // null
                         <AnnotationShow 
                           annotations={ trackAnnotations }
+                          // annotationId={this.state.getAnnotationId}
                         />
   
                     :

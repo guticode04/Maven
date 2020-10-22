@@ -21,7 +21,11 @@ class AnnotationForm extends React.Component {
       e.preventDefault();
       const annotationForm = this;
       this.props.createAnnotation(this.state)
-         .then(() => {this.props.toggleAnnoForm()})
+         .then((createdAnnotation) => {
+            annotationForm.props.clearAnnotatedText();
+            annotationForm.props.setAnnotationId(createdAnnotation.annotation.id);
+         })
+      this.props.toggleAnnoForm();
    }
 
    handleInput(field) {
