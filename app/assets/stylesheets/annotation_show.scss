@@ -1,0 +1,62 @@
+.annotation-container {
+   display: flex;
+
+}
+
+.annotation-divider {
+   background-color: rgb(172, 172, 240);
+   display: block;
+}
+
+.annotation-triangle-container {
+   background-color: white;
+   animation-name: triangle-fade-in-right;
+   animation-duration: .5s;
+   animation-delay: .25s;
+   animation-fill-mode: forwards;
+}
+
+.triangle-top {
+   background-color: rgb(172, 172, 240);
+   width: 4px;
+   height: 75%;
+   position: absolute;
+   transform: rotate(45deg);
+   right: 8px;
+   top: -5px;
+}
+
+.triangle-tip {
+   background-color: rgb(172, 172, 240);
+   width: 4px;
+   height: 12%;
+   position: absolute;
+   left: 11px;
+   transform: rotate(45deg);
+   top: 14px;
+}
+
+.triangle-bottom {
+   background-color: rgb(172, 172, 240);
+   width: 4px;
+   height: 75%;
+   position: absolute;
+   transform: rotate(-45deg);
+   right: 8px;
+   bottom: -5px;
+}
+
+.annotation-info {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.annotation-header {
+   font-weight: 700;
+}
+
+.annotation-body {
+   word-break: break-word;
+   white-space: pre-wrap;
+}
