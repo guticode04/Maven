@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import AnnotationShow from './annotation_show';
 
 class AnnotationForm extends React.Component {
@@ -16,6 +17,11 @@ class AnnotationForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
    }
 
+   componentWillUnmount(){
+      this.props.toggleAnnoForm();
+      this.props.toggleAnnoButton();
+   }
+
    handleSubmit(e) {
       // debugger
       e.preventDefault();
@@ -26,6 +32,8 @@ class AnnotationForm extends React.Component {
             annotationForm.props.setAnnotationId(createdAnnotation.annotation.id);
          })
       this.props.toggleAnnoForm();
+      //may need to toggle start annotation button or add reference so when clicked 
+      //outside of the form and start new annotation the button shows up again
    }
 
    handleInput(field) {
@@ -37,7 +45,7 @@ class AnnotationForm extends React.Component {
 
 
    render() {
-
+      // debugger
       return(
          <>
          {/* { comeback to this after annotations show up on track show
@@ -69,4 +77,4 @@ class AnnotationForm extends React.Component {
 
 }
 
-export default AnnotationForm;
+export default withRouter(AnnotationForm);

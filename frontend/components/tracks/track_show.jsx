@@ -30,6 +30,7 @@ class TrackShow extends React.Component {
     this.mouseUpHandler = this.mouseUpHandler.bind(this);
     this.setAnnotationId = this.setAnnotationId.bind(this);
     this.toggleAnnoForm = this.toggleAnnoForm.bind(this);
+    this.toggleAnnoButton = this.toggleAnnoButton.bind(this);
   }
 
   clearAnnotatedText(){
@@ -136,6 +137,10 @@ class TrackShow extends React.Component {
   toggleAnnoForm() {
     this.setState({showAnnoForm: false});
   }
+  
+  toggleAnnoButton() {
+    this.setState({showAnnoButton: true})
+  }
 
   render(){
     const { track, annotations } = this.props;
@@ -231,8 +236,7 @@ class TrackShow extends React.Component {
               { 
                 this.props.loggedIn ? (
 
-                  // {
-                    this.state.annotatedText.length != 0 ? 
+                    this.state.annotatedText.length !== 0 ? 
   
                       this.state.showAnnoButton ?
   
@@ -249,6 +253,7 @@ class TrackShow extends React.Component {
                           <AnnotationForm
                             showAnnoForm={this.state.showAnnoForm}
                             toggleAnnoForm={this.toggleAnnoForm}
+                            toggleAnnoButton={this.toggleAnnoButton}
                             startIdx={this.state.startIdx}
                             endIdx={this.state.endIdx}
                             userId={this.props.currentUser.id}
@@ -259,21 +264,21 @@ class TrackShow extends React.Component {
                           />
                           
                         :
-                          // null
-                        <AnnotationShow 
-                          annotations={ trackAnnotations }
-                          // annotationId={this.state.getAnnotationId}
-                        />
-  
-                    :
-                    
-                  null
-                  // }
-                )
-                  :
 
+                        null
+                          
+                    :
+                          
+                    null
+
+                    )
+                :
+                          
                 null
               }
+              {/* <AnnotationShow 
+                annotations={ trackAnnotations }
+              /> */}
             </div>
           </div>
         </div>
