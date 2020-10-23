@@ -40,7 +40,6 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
     this.props.fetchTrack(this.props.match.params.trackId);
     this.props.fetchAnnotations();
   }
@@ -276,9 +275,15 @@ class TrackShow extends React.Component {
                           
                 null
               }
-              {/* <AnnotationShow 
-                annotations={ trackAnnotations }
-              /> */}
+              
+              {
+                this.state.getAnnotationId ?
+                <AnnotationShow
+                  annotationId={this.state.getAnnotationId}
+                />
+                  :
+                null
+              }
             </div>
           </div>
         </div>

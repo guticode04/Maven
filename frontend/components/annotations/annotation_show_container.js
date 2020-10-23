@@ -3,12 +3,12 @@ import { fetchAnnotation, updateAnnotation, deleteAnnotation, createAnnotation }
 import AnnotationShow from './annotation_show';
 
 // May not need this because we can get annotation from track show
-// const mapStateToProps = (state, ownProps) => {
-//   // debugger
-//   return ({
-//     annotation: state.entities.annotations
-//   })
-// }
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return ({
+    annotation: state.entities.annotations[ownProps.annotationId]
+  })
+}
 
 const mapDispatchToProps = dispatch => ({
   fetchAnnotation: annotationId => dispatch(fetchAnnotation(annotationId)),
@@ -17,5 +17,5 @@ const mapDispatchToProps = dispatch => ({
   // createAnnotation: annotation => dispatch(createAnnotation(annotation))
 })
 
-export default connect(null, mapDispatchToProps)(AnnotationShow);
-// export default connect(mapStateToProps,mapDispatchToProps)(AnnotationShow);
+// export default connect(null, mapDispatchToProps)(AnnotationShow);
+export default connect(mapStateToProps,mapDispatchToProps)(AnnotationShow);
