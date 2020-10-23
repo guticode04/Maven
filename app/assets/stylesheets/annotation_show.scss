@@ -1,9 +1,10 @@
 .annotation-container {
    display: flex;
-   height: 100%;
    animation-name: annotation-fade-in-left;
    animation-duration: .5s;
-   width: 100%;
+   z-index: 25;
+   position: fixed;
+   top: 50%;
 }
 
 @keyframes annotation-fade-in-left {
@@ -84,7 +85,7 @@
 .annotation-info {
    display: flex;
    flex-direction: column;
-   width: 100%;
+   width: 85%;
 }
 
 .annotation-header {
