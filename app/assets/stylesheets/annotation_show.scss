@@ -1,19 +1,54 @@
 .annotation-container {
    display: flex;
+   height: 100%;
+   animation-name: annotation-fade-in-left;
+   animation-duration: .5s;
+   width: 100%;
+}
 
+@keyframes annotation-fade-in-left {
+   0% {
+      left: -50px;
+      opacity: 0;
+      position: relative;
+   }
+   100% {
+      left: 0;
+      opacity: 1;
+      position: relative;
+   }
 }
 
 .annotation-divider {
    background-color: rgb(172, 172, 240);
    display: block;
+   width: 4px;
+   margin-right: 10px;
 }
 
 .annotation-triangle-container {
    background-color: white;
+   height: 2rem;
+   width: 2rem;
+   position: absolute;
+   left: -28px;
+   top: 20%;
+   opacity: 0;
    animation-name: triangle-fade-in-right;
    animation-duration: .5s;
    animation-delay: .25s;
    animation-fill-mode: forwards;
+}
+
+@keyframes triangle-fade-in-right {
+   0% {
+      left: 8px;
+      opacity: 0;
+   }
+   100% {
+      left: -28px;
+      opacity: 1;
+   }
 }
 
 .triangle-top {
