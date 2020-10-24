@@ -20,6 +20,7 @@ class AnnotationShow extends React.Component {
 
   // This works only for the first time then we lose track of
   // current. Error says "cannot read property contains of null"
+  // because when component unmounts current is set to null
 
   hideAnnotationShow(e) {
       e.preventDefault();
@@ -31,22 +32,6 @@ class AnnotationShow extends React.Component {
       document.addEventListener('click', this.hideAnnotationShow)
   }
 
-  // THIS DOES NOT WORK!!
-
-  // hideAnnotationShow(e) {
-  //   if ( this.state.show === false ) {
-  //     e.preventDefault();
-  //     this.setState( { show: true });
-  //     this.showAnnotationShow = (e) => {
-  //       if ( !this.ref.current.contains(e.target) ) {
-  //         this.setState( { show: false } );
-  //         document.removeEventListener('click', this.showAnnotationShow);
-  //         this.showAnnotationShow = null;
-  //       }
-  //     }
-  //     document.addEventListener('click', this.showAnnotationShow)
-  //   }
-  // }
 
   render(){
     const { annotation } = this.props;
@@ -54,8 +39,6 @@ class AnnotationShow extends React.Component {
       <>
       {
         this.state.show ?
-          // null
-          //   : 
           <div className="annotation-container" ref={this.ref}>
             <div className="annotation-divider"></div>
             <div className="annotation-triangle-container">
