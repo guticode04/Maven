@@ -7,9 +7,7 @@ class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // sessionStorage.getItem('modalStatus') returns a string!
-      // so in this case the string is "false"
-      isShowing: true,
+      hasBeenSeen: sessionStorage.getItem('hasBeenSeen') || sessionStorage.setItem('hasBeenSeen', 'no'),
     }
     this.closeModal = this.closeModal.bind(this);
   }
@@ -17,34 +15,29 @@ class TrackIndex extends React.Component {
   closeModal(e) {
     e.preventDefault();
     this.setState({
-      isShowing: false,
+      hasBeenSeen: sessionStorage.setItem('hasBeenSeen', 'yes'),
     });
-    // sessionStorage.setItem('modalStatus', "")
   }
   
 
   componentDidMount() {
     this.props.fetchTracks();
-    // if( Boolean(sessionStorage.getItem('modalStatus')) === false ) {
-    //   sessionStorage.setItem('modalStatus', "true");
-    // }
   }
 
   render() {
     
     const { tracks } = this.props;
-    // const modalStatus = sessionStorage.getItem('modalStatus');
     
     return(
       <>
         { 
-          this.state.isShowing ? 
+          this.state.hasBeenSeen === 'no' ? 
             <div className="modal-overlay">
                 <Modal close={this.closeModal} />
             </div> 
             :
           null 
-        }
+        } 
 
         <div className="top-tracks-container">
           <h1 className="top-tracks-header">Tracks</h1>
