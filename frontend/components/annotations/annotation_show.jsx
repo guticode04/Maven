@@ -5,6 +5,7 @@ class AnnotationShow extends React.Component {
     super(props);
     this.state = {
       show: true,
+      // show: false,
     }
     this.ref = React.createRef();
     this.hideAnnotationShow = this.hideAnnotationShow.bind(this);
@@ -12,11 +13,29 @@ class AnnotationShow extends React.Component {
 
   componentDidMount() {
     document.addEventListener('click', this.hideAnnotationShow)
+    // this.hideAnnotationShow();
   }
 
   componentWillUnmount(){
-    document.removeEventListener('click', this.hideAnnotationShow);
+    // if ( this.showAnnotationShow ) {
+      document.removeEventListener('click', this.showAnnotationShow);
+    // }
   }
+
+  // hideAnnotationShow(e) {
+  //   if (this.state.show === false) {
+  //     e.preventDefault();
+  //     this.setState({ show: true });
+  //     this.showAnnotationShow = (e) => {
+  //       if ( !this.ref.current.contains(e.target)) {
+  //         this.setState({ show: false });
+  //         document.removeEventListener('click', this.showAnnotationShow);
+  //         this.showAnnotationShow = null;
+  //       }
+  //     }
+  //     document.addEventListener('click', this.showAnnotationShow)
+  //   }
+  // }
 
   // This works only for the first time then we lose track of
   // current. Error says "cannot read property contains of null"
@@ -25,7 +44,7 @@ class AnnotationShow extends React.Component {
   hideAnnotationShow(e) {
       e.preventDefault();
       this.setState( { show: false });
-      if ( !this.ref.current.contains(e.target) ) {
+      if ( this.ref.current && !this.ref.current.contains(e.target) ) {
         this.setState( { show: true });
         document.removeEventListener('click', this.hideAnnotationShow);
       }
