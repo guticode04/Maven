@@ -19,10 +19,6 @@ class AnnotationShow extends React.Component {
     this.setState({ show: true })
   }
 
-  // This works only for the first time then we lose track of
-  // current. Error says "cannot read property contains of null"
-  // because when component unmounts current is set to null
-
   hideAnnotationShow(e) {
       e.preventDefault();
       this.setState( { show: false });

@@ -124,6 +124,12 @@ class TrackShow extends React.Component {
       annotatedText: window.getSelection().toString(),
       beginSelection: null, //resets for next selection
     })
+
+    if (!e.target.classList.contains('highlight-annotation')){
+      this.setState({
+        getAnnotationId: null
+      })
+    }
     
   }
 
@@ -144,7 +150,6 @@ class TrackShow extends React.Component {
   render(){
     const { track, annotations } = this.props;
     let trackAnnotations = annotations.filter(annotation => (annotation.track_id === track.id));
-    // debugger
     
     if ( !track ) {
       return null;
