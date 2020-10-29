@@ -10,6 +10,10 @@ class CommentIndex extends React.Component {
       this.props.fetchAllTrackComments();
    };
 
+   // componentDidUpdate(oldProps) {
+   //    debugger
+   // }
+
    render() {
       const comments = this.props.comments;
       let filteredComments = comments.filter(comment => comment.track_id === this.props.trackId);

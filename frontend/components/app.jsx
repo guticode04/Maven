@@ -10,7 +10,6 @@ import TrackFormContainer from '../components/tracks/track_form_container';
 import TrackShowContainer from '../components/tracks/track_show_container';
 import LowerNavBar from '../components/nav_bar/lower_nav_bar';
 import Footer from './footer/footer';
-// import AnnotationShowContainer from './annotations/annotation_show_container';
 
 export default () => (
   <> 
@@ -22,7 +21,6 @@ export default () => (
       <AuthRoute path="/login" component={LoginContainer} />
       <ProtectedRoute path="/tracks/new" component={TrackFormContainer} />
       <Route path="/tracks/:trackId" component={TrackShowContainer} />
-      {/* <Route path="/tracks/:trackId/:annotationId" component={AnnotationShowContainer} /> */}
       <Route component={ErrorPage} />
     </Switch>
     <Footer />

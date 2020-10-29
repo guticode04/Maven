@@ -11,7 +11,6 @@ const tracksReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_TRACKS:
       return Object.assign({}, oldState, action.tracks)
     case RECEIVE_TRACK_AND_ANNOTATIONS:
-      // debugger
       return Object.assign({}, oldState, {[action.payload.id]: action.payload});
     case REMOVE_TRACK:
       let nextState = Object.assign({}, oldState);

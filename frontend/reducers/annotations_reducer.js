@@ -8,7 +8,6 @@ const annotationsReducer = ( oldState = {} , action ) => {
   Object.freeze(oldState);
   switch ( action.type ) {
     case RECEIVE_ALL_ANNOTATIONS:
-      // debugger
       return Object.assign({}, oldState, action.annotations)
     case RECEIVE_ANNOTATION:
       

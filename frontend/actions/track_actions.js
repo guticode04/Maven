@@ -27,7 +27,6 @@ export const fetchTracks = () => dispatch => {
 }
 
 export const fetchTrack = trackId => dispatch => {
-  // debugger
   return TrackApiUtil.fetchTrack(trackId)
     .then(payload => dispatch(receiveTrackAndAnnotations(payload)))
 }

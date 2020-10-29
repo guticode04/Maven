@@ -19,15 +19,12 @@ const removeAnnotation = annotationId => ({
   annotationId
 });
 
-// Don't really need this because annotations are fetched with track.
-// If deleting delete consts as well along with case in reducer.
 export const fetchAnnotations = () => dispatch => {
   return AnnotationApiUtil.fetchAnnotations()
     .then(annotations => dispatch(receiveAnnotations(annotations)))
 }
 
 export const fetchAnnotation = annotationId => dispatch => {
-  // debugger
   return AnnotationApiUtil.fetchAnnotation(annotationId)
     .then(annotation => dispatch(receiveAnnotation(annotation)))
 };
