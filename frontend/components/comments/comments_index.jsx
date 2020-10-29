@@ -10,9 +10,6 @@ class CommentIndex extends React.Component {
       this.props.fetchAllTrackComments();
    };
 
-   // componentDidUpdate(oldProps) {
-   //    debugger
-   // }
 
    render() {
       const comments = this.props.comments;

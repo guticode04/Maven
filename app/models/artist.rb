@@ -5,5 +5,5 @@ class Artist < ApplicationRecord
   class_name: :Track,
   foreign_key: :artist_id,
   primary_key: :id
-  # has_many :albums
+
 end

@@ -45,7 +45,7 @@ const CommentIndexItem = props => {
 
 
    return(
-      // <>
+
          <li className="comment-index-item">
             <div className="comment-info">
                <div className="comment-author-container">
@@ -66,7 +66,7 @@ const CommentIndexItem = props => {
                { comment.body }
             </div>
          </li>
-      // </>
+
    )
 }
 

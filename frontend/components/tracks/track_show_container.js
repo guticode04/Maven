@@ -5,7 +5,6 @@ import { selectAllAnnotations } from '../../reducers/selectors';
 import TrackShow from './track_show';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return ({ 
     track: state.entities.tracks[ownProps.match.params.trackId],
     annotations: selectAllAnnotations(state),

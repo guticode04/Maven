@@ -21,7 +21,6 @@ const removeTrack = trackId => ({
 })
 
 export const fetchTracks = () => dispatch => {
-  // debugger
   return TrackApiUtil.fetchTracks()
     .then(tracks => dispatch(receiveTracks(tracks)))
 }

@@ -1,11 +1,9 @@
 import React, { useRef } from 'react';
 
 const TrackLyrics = (props) => {
-   // will be passing following form track show
    const { track, trackAnnotations, mouseUpHandler, mouseDownHandler, setAnnotationId } = props;
    const lyricsEle = useRef(null);
-   // debugger
-   // build jsx objects to be displayed
+
    let annotatedAndAnnotatableLyrics = [];
    let prev = 0;
    let j = 0;
