@@ -14,6 +14,13 @@ Maven, a Genius clone, is a music application that allows users to share their m
 
 ## Features
 
+* Tracks
+  * Users can add tracks that are not currently found in the database.
+* Annotations
+  * Users can add annotations to the lyrics of tracks adding insight as to what the artist is truly saying.
+* Comments 
+  * Users can add comments on their favorite tracks.
+
 ### User Auth
 
 Secure backend to frontend authentication using BCrypt. Users can create an account and confidently know that their information is secure.
@@ -52,3 +59,11 @@ Logged in users also have the option of deleting a track entirely. Once it is ve
     </>
    )}
 ```
+
+### Annotatoins
+
+#### getSelection()
+
+### Comments
+
+Once logged in a user can submit comments on a tracks show page.
